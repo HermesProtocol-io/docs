@@ -1,0 +1,196 @@
+---
+sidebar_label: 🔔 Alert
+sidebar_position: 1
+title: 🔔 Alert
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "./styles.module.css";
+
+<!-- Documentation -->
+
+This command gives you a custom creation of different price alerts.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alerts
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+```
+/price
+```
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Create Price
+
+This command allows you to setup a price alert, that will notify you when the coin you want reaches the price you pretend.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert create price
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_\*
+
+**blockchain\*:**
+
+    type: Options
+    description: The blockchain where the coin exist to.
+    choices: [ Terra Classic, Terra ]
+
+**token\*:**
+
+    type: String
+    description: The cryptocurrency you wish to create the price alert for.
+
+**value\*:**
+
+    type: String
+    description: The price you wish that the coin reaches in order to be notified.
+
+**type\*:**
+
+    type: Options
+    description: Define on what condition relative to the value you will be notified
+    choices: [ greater than or equal to, greater than, lower than or equal to, lower than, equal to ]
+
+\*\*Example Usage:
+
+```
+/alert create price dex:Terraswap asset:Luna value:2 blockchain:Terra Classic
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+<p><button class={styles.telegram}>Subscribe Price Alerts</button></p>
+
+In order to create a price alert you need to follow these steps:
+
+1. Press the Subscribe Price Alerts Button;
+2. Select the blockchain you wish;
+3. Select the Token pair you desire;
+4. insert the price you want the pair to reach in order to be notified.
+
+Well done! you have created a price alert.
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## List
+
+This command gives you a list with all your alerts.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+{/*
+```
+/alert list 
+```
+*/}
+    🏗️ Under development ...
+</TabItem>
+<TabItem value="telegram" label="Telegram">
+<p><button class={styles.telegram}>List Pair Alert</button></p>
+
+In order to list all the price alerts you are subscribed to, you simply need to press the List Pair Alert button to receive a list with all the alerts.
+
+Well done! You have listed all your alerts.
+
+</TabItem>
+<TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Delete
+
+This command allows you to delete one of your previously created alerts.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert delete
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_\*
+
+**id\*:**
+
+    type: Options
+    description: The alerts you previously created.
+    choices: [ Your created alerts ]
+
+**Example Usage**
+
+```
+/alert delete id: price alert for ...
+```
+
+</TabItem>
+<TabItem value="telegram" label="Telegram">
+<p><button class={styles.telegram}>Unsubscribe Price Alert</button></p>
+
+In order to unsubscribe from a price alert you need to follow these steps:
+
+1. Press the Unsubscribe Price Alert button;
+2. Select the alert you wish to remove.
+
+Well done! You have unsubscribed from a price alert
+
+</TabItem>
+<TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## GUI
+
+The Alert gui command gives you an UI for easier alert configuration.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+    🏗️ Under development ...
+
+//prettier-ignore
+{\*
+
+```
+/alert gui
+```
+
+\*/}
+
+</TabItem>
+</Tabs>

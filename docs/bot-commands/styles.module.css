@@ -1,0 +1,21 @@
+.discord {
+    background: url("https://discord.com/assets/3437c10597c1526c3dbd98c737c2bcae.svg") no-repeat;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.telegram {
+    width: 25ch;
+    height: 4ch;
+    font-size: medium;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.telegram:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}

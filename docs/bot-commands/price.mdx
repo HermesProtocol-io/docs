@@ -1,0 +1,112 @@
+---
+sidebar_label: 🪙 Price
+sidebar_position: 3
+title: 🪙 Price
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "./styles.module.css";
+
+<!-- Documentation -->
+
+This command is used to check coin prices on multiple swaps.
+
+```
+/price
+```
+
+## by_symbol
+
+This command lets you get up-to-date information about the pricing of any of the supported coins.
+
+```
+/price by_symbol
+```
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**Symbol\*:**
+
+    type: String
+    description: Currency you wish to check the price.
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where that coin exists.
+    choices: [ Terra Classic, Terra ]
+
+**Example usage**
+
+```
+/price by_symbol symbol: Luna blockchain Terra Classic
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## by_contract_address
+
+```
+/price by_contract_address
+```
+
+This command allows you to check the price of a specific currency with on a specific smart contract.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**contract_address\*:**
+
+    type: String
+    description: Smart contract that you wish to check (read the note below).
+
+:::note
+All these prices are obtained from TerraSwap and therefore must be registered there
+:::
+
+**BlockChain\*:**
+
+    type: string
+    description: Blockchain where that contract exists.
+
+**Example Usage**
+
+```
+/price by_contract_address contract_address:terra1... blockchain: Terra Classic
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
