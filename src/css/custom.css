@@ -28,7 +28,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-color-primary: #c49a6d;
   --ifm-color-primary-dark: #bb8b57;
   --ifm-color-primary-darker: #b7834c;
@@ -39,7 +39,6 @@ html[data-theme='dark'] {
   --ifm-background-color: #1f2937 !important;
   --ifm-navbar-background-color: #1f2937;
   --code-bg-color: #1b1b1b;
-
 }
 
 code {
@@ -50,8 +49,7 @@ code {
   height: 8ch;
   box-shadow: none;
   border-bottom: var(--ifm-color-primary) solid 1px;
-  }
-
+}
 
 .navbar__items {
   height: 6ch;
@@ -73,18 +71,25 @@ code {
   }
 }
 
+/*
 @media (max-width: 996px) {
   .colorModeToggle_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Content-styles-module {
     display: block !important;
   }
 }
 
-@media (max-width: 996px)  {
-.colorModeToggle_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Content-styles-module {
+@media (max-width: 996px) {
+  .colorModeToggle_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Content-styles-module {
     display: block !important;
-}
+  }
 
-.navbar__inner {
-  width: auto;
-}
+  .navbar__inner {
+    width: auto;
+  }
+} */
+
+@media (max-width: 996px) {
+  .colorModeToggle_DEke {
+    display: block !important;
+  }
 }

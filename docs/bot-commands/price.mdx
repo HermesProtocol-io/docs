@@ -14,20 +14,51 @@ import styles from "./styles.module.css";
 
 This command is used to check coin prices on multiple swaps.
 
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
 ```
 /price
 ```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where that coin exists.
+    choices: [ Terra Classic, Terra ]
+
+**token\*:**
+
+    type: String
+    description: The cryptocurrency you wish to create the price alert for.
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
 
 ## by_symbol
 
 This command lets you get up-to-date information about the pricing of any of the supported coins.
 
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
 ```
 /price by_symbol
 ```
-
-<Tabs groupId="platforms">
-<TabItem value="discord" label="Discord" default>
 
 <p>
   <strong>Parameters:</strong>
@@ -65,14 +96,14 @@ This command lets you get up-to-date information about the pricing of any of the
 
 ## by_contract_address
 
-```
-/price by_contract_address
-```
-
 This command allows you to check the price of a specific currency with on a specific smart contract.
 
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
+
+```
+/price by_contract_address
+```
 
 <p>
   <strong>Parameters:</strong>

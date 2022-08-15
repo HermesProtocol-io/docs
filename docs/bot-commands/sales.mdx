@@ -53,16 +53,16 @@ This command let you subscribe a NFT collection sales.
 
 \*_Required_
 
-**collection_address\*:**
-
-    type: Collection Address
-    description: NFT collection address to subscribe.
-
 **blockchain\*:**
 
     type: Options
     description: Blockchain where that address exists.
     choices: [ Terra Classic, Terra ]
+
+**collection\*:**
+
+    type: Collection
+    description: NFT collection address to subscribe.
 
 **channel:**
 
@@ -72,7 +72,7 @@ This command let you subscribe a NFT collection sales.
 **Example Usage**
 
 ```
-/sales subscribe collection_address:terra1... blockchain:Terra
+/sales subscribe blockchain:Terra collection:terra1... channel: #channel
 ```
 
 or
@@ -111,7 +111,7 @@ This command allows you to unsubscribe one of yours NFT collections sales previo
 <TabItem value="discord" label="Discord" default>
 
 ```
-/sales subscribe
+/sales unsubscribe
 ```
 
 <p>
