@@ -51,7 +51,7 @@ This command allows you to setup a price alert, that will notify you when the co
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
 **blockchain\*:**
 
@@ -75,10 +75,10 @@ This command allows you to setup a price alert, that will notify you when the co
     description: Define on what condition relative to the value you will be notified
     choices: [ greater than or equal to, greater than, lower than or equal to, lower than, equal to ]
 
-\*\*Example Usage:
+**Example Usage:**
 
 ```
-/alert create price dex:Terraswap asset:Luna value:2 blockchain:Terra Classic
+/alert create price blockchain:Terra token:axlUSDT / LUNA Pair (Phoenix) price:5 type:greater than or equal to
 ```
 
 </TabItem>
@@ -171,26 +171,5 @@ Well done! You have unsubscribed from a price alert
 </TabItem>
 <TabItem value="twitter" label="Twitter">
     🏗️ Under development ...
-</TabItem>
-</Tabs>
-
-## GUI
-
-The Alert gui command gives you an UI for easier alert configuration.
-
-<Tabs groupId="platforms">
-<TabItem value="discord" label="Discord" default>
-
-    🏗️ Under development ...
-
-//prettier-ignore
-{\*
-
-```
-/alert gui
-```
-
-\*/}
-
 </TabItem>
 </Tabs>

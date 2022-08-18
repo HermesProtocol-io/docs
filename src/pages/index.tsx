@@ -4,16 +4,18 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import {Redirect} from '@docusaurus/router';
 
 import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <section className={clsx("hero hero--primary", styles.heroBanner)}>
+    <section>
       <div className={clsx(styles.flexZone, styles.firstSection)}>
-        <div>
-          <h1 className="hero__title">Hermes Protocol</h1>
+        <div className={styles.text}>
+          <h1 className="hero__title"></h1>
+          <p>Hermes Protocol is a notification system, that is free to use. It allows users to receive up to date information regarding wallet transactions, NFT sales, prices and governance polls.</p>
           <div className={styles.buttons}>
             <Link
               className="button button--primary button--lg"
@@ -23,7 +25,7 @@ function HomepageHeader() {
             </Link>
             <Link
               className="button button--secondary button--lg"
-              to="/docs/intro"
+              to="docs/intro"
             >
               Docs
             </Link>
@@ -31,7 +33,7 @@ function HomepageHeader() {
         </div>
         <div className={styles.sectionLogo}>
           <img
-            src="./img/icons/hermes-icon-camel.svg"
+            src="./img/hermes-camel.svg"
             className={styles.imgLogo}
           />
         </div>
@@ -40,14 +42,16 @@ function HomepageHeader() {
   );
 }
 
+// export default function Home(): JSX.Element {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  return (
-    <Layout>
-      <main>
-        <HomepageHeader />
-        <HomepageFeatures />
-      </main>
-    </Layout>
-  );
+  return <Redirect to="/docs/intro"/>
+  // return (
+  //   <Layout>
+  //     <main>
+  //       <HomepageHeader />
+  //       <HomepageFeatures />
+  //     </main>
+  //   </Layout>
+  // );
 }

@@ -54,12 +54,15 @@ const config = {
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
       navbar: {
         // hideOnScroll: true,
         // title: "Hermes Protocol",
         logo: {
-          alt: "Hermes Protocol Icon",
+          alt: "Hermes Protocol Secondary Logo",
           src: "img/secondary-logo/hermes-secondary-camel.svg",
         },
         items: [
@@ -87,7 +90,7 @@ const config = {
           background: "rgba(0,0,0,0.8)",
         },
       },
-    }),
+    },
   plugins: [
     "plugin-image-zoom",
     [require.resolve("@easyops-cn/docusaurus-search-local"), {}],

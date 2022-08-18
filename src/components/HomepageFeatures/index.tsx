@@ -11,11 +11,11 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "Easy and simple",
-    svg: "./img/easy-decisions.svg",
+    svg: "./img/make-it-your-own.svg",
     description: (
       <>
-        Your experience should be effortless, so we've built an interface in an
-        intuitive way which you can configure and optimise over time.
+        {/* Your experience should be effortless, so we've built an interface in an
+        intuitive way which you can configure and optimise over time. */}
       </>
     ),
   },
@@ -24,8 +24,8 @@ const FeatureList: FeatureItem[] = [
     svg: "./img/tailored-for-you.svg",
     description: (
       <>
-        Log in with your wallet or social account, enable the dApps you want and
-        subscribe to the type of notifications that are important to you.
+        {/* Log in with your wallet or social account, enable the dApps you want and
+        subscribe to the type of notifications that are important to you. */}
       </>
     ),
   },
@@ -34,8 +34,8 @@ const FeatureList: FeatureItem[] = [
     svg: "./img/infinitely-scalable.svg",
     description: (
       <>
-        Notification are just the tip of the Iceberg. Wallet-to-Wallet
-        messaging, P2P Transactions, airdrop-as-notifications and much more.
+        {/* Notification are just the tip of the Iceberg. Wallet-to-Wallet
+        messaging, P2P Transactions, airdrop-as-notifications and much more. */}
       </>
     ),
   },

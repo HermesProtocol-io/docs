@@ -1,0 +1,50 @@
+---
+sidebar_label: 🪙 Price
+sidebar_position: 3
+title: 🪙 Price
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "./styles.module.css";
+
+<!-- Documentation -->
+
+This command is used to check coin prices on multiple swaps.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/price
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where that coin exists.
+    choices: [ Terra Classic, Terra ]
+
+**token\*:**
+
+    type: String
+    description: The cryptocurrency you wish to create the price alert for.
+
+</TabItem>
+
+<TabItem value='telegram' label='Telegram'>
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
