@@ -1,0 +1,189 @@
+---
+sidebar_label: ➖ Delete
+sidebar_position: 4
+title: Delete
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../styles.module.css";
+
+<!-- Documentation -->
+
+This command allows you to delete one your previously created alerts
+
+```
+    /alert delete
+```
+
+## nft
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert delete nft
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**channel\*:**
+
+    type: Text Channel
+    description: Channel where the notifications are being sent.
+
+**collection\*:**
+
+    type: Options
+    description: NFT collection address to unsubscribe.
+    choices: [ Your NFT collections addresses ]
+
+**Example Usage**
+
+```
+/alert delete nft channel:#channel collection:terra1...
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Governance
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert delete governance
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**channel\*:**
+
+    type: Text Channel
+    description: Channel where the polls are being sent to.
+
+**address\*:**
+
+    type: String
+    description: Inserts the smart contract where the polls are created.
+
+:::note
+The only governance polls that are accepted must follow the standard used by Anchor Protocol and Mirror Protocol.
+:::
+
+Usage example:
+
+```
+/alert delete governance blockchain:Terra channel:#governance address:terra1...
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Price
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert delete price
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_\*
+
+**id\*:**
+
+    type: Options
+    description: The alerts you previously created.
+    choices: [ Your created alerts ]
+
+**Example Usage**
+
+```
+/alert delete price id: price alert for ...
+```
+
+</TabItem>
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+<TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Wallet
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert delete wallet
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**address\*:**
+
+    type: String
+    description: Wallet address to remove from your watch list.
+
+**Example Usage**
+
+```
+/alert delete wallet address:terra1...
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>

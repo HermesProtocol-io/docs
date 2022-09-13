@@ -1,0 +1,233 @@
+---
+sidebar_label: ➕ Create
+sidebar_position: 1
+title: Create
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../styles.module.css";
+
+<!-- Documentation -->
+
+This command allows you to create alerts in several alert categories
+
+```
+    /alert create
+```
+
+## nft
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+    /alert create nft
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where that address exists.
+    choices: [ Terra Classic, Terra ]
+
+**collection\*:**
+
+    type: Collection
+    description: NFT collection address to subscribe.
+
+**channel:**
+
+    type: Text Channel
+    description: Channel to send the notifications.
+
+**Example Usage**
+
+```
+/alert create nft blockchain:Terra collection:terra1... channel: #channel
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Governance
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert create governance
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where the poll exists.
+    choices: [ Terra Classic, Terra ]
+
+**channel\*:**
+
+    type: Text Channel
+    description: Channel where the polls will be sent to.
+
+**address\*:**
+
+    type: String
+    description: Inserts the smart contract where the polls exists.
+
+:::note
+In order for a governance polls to be accepted they must follow the standard used by Anchor Protocol and Mirror Protocol.
+:::
+
+**url:**
+
+    type: link
+    description: Insert the protocol website where all the proposals https://protocol.io/gov/%id%.
+
+**mention:**
+
+    type : Role
+    description: Insert which role you wish to mention whenever a new poll is posted.
+
+**Usage example**
+
+```
+/alert create governance blockchain:Terra channel:#governance address:terra1... url:https://protocol.io/gov/%id% mention:@role
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Price
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert create price
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: The blockchain where the coin exist to.
+    choices: [ Terra Classic, Terra ]
+
+**token\*:**
+
+    type: String
+    description: The cryptocurrency you wish to create the price alert for.
+
+**value\*:**
+
+    type: String
+    description: The price you wish that the coin reaches in order to be notified.
+
+**type\*:**
+
+    type: Options
+    description: Define on what condition relative to the value you will be notified
+    choices: [ greater than or equal to, greater than, lower than or equal to, lower than, equal to ]
+
+**Example Usage:**
+
+```
+/alert create price blockchain:Terra token:axlUSDT / LUNA Pair (Phoenix) price:5 type:greater than or equal to
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Wallet
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/alert create wallet
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**address\*:**
+
+    type: String
+    description: Wallet address to observe.
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where that address exists.
+    choices: [ Terra Classic, Terra ]
+
+**Example Usage**
+
+```
+/alert create wallet address:terra1... blockchain:Terra
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
