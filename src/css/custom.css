@@ -93,3 +93,7 @@ code {
     display: block !important;
   }
 }
+
+em > img {
+  vertical-align: text-bottom !important;
+}
