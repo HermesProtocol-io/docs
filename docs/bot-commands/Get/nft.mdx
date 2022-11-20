@@ -1,0 +1,66 @@
+---
+sidebar_label: 🖼️ NFT
+sidebar_position: 3
+title: NFT
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../styles.module.css";
+
+<!-- Documentation -->
+
+This commands allows you to get information from any specific NFT from the supported collections on the supported blockchains.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/get nft
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where the NFT exists.
+    choices: [ Terra Classic, Terra ]
+
+**collection\*:**
+
+    type: Collection
+    description: Collection where the NFT you wish to check exists.
+
+**ID:**
+
+    type: ID
+    description: ID of the NFT you wish to check the informartion of.
+
+**visibility:**
+
+    type: Options
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+
+**Example Usage**
+
+```
+/get nft blockchain: Terra collection: terra(...)p2 id: 10
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>

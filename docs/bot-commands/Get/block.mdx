@@ -1,6 +1,6 @@
 ---
-sidebar_label: Block
-sidebar_position: 5
+sidebar_label: 🧊 Block
+sidebar_position: 1
 title: Block
 ---
 
@@ -12,9 +12,47 @@ import styles from "../styles.module.css";
 
 <!-- Documentation -->
 
+This commands allows you to get informations about a specific block from any of the supported blockchains.
+
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
-  🏗️ Under development ...
+
+```
+/get block
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain from where to obtain the most recent block.
+    choices: [ Terra Classic, Terra ]
+
+**height:**
+
+    type: Number
+    description: Block you wish to get the information of.
+
+:::info
+If this parameter is left blank you will get information regarding the most recent block.
+:::
+
+**visibility:**
+
+    type: Options
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+
+**Example Usage**
+
+```
+/get block blockchain: Terra height: 287651 visibility: public
+```
+
 </TabItem>
 
 <TabItem value="telegram" label="Telegram">

@@ -12,10 +12,10 @@ import styles from "../styles.module.css";
 
 <!-- Documentation -->
 
-This command allows you to create alerts in several alert categories
+This command allows you to create notifications in several notifications categories
 
 ```
-    /alert create
+    /notification create
 ```
 
 ## NFT
@@ -24,7 +24,7 @@ This command allows you to create alerts in several alert categories
 <TabItem value="discord" label="Discord" default>
 
 ```
-    /alert create nft
+    /notification create nft
 ```
 
 <p>
@@ -44,15 +44,24 @@ This command allows you to create alerts in several alert categories
     type: Collection
     description: NFT collection address to subscribe.
 
+**token:**
+
+    type: ID
+    description: If this parameter is filled, you create an NFT Monitor for a specific NFT.
+
+:::info
+After running the command you will be prompted with a new message with some alert types to choose from, please press the ones you wish and if the button turns green your option is recorded.
+:::
+
 **channel:**
 
     type: Text Channel
-    description: Channel to send the notifications.
+    description: Channel to send the alerts.
 
 **Example Usage**
 
 ```
-/alert create nft blockchain:Terra collection:terra1... channel: #channel
+/notification create nft blockchain:Terra collection:terra1... channel: #channel
 ```
 
 </TabItem>
@@ -74,7 +83,7 @@ This command allows you to create alerts in several alert categories
 <TabItem value="discord" label="Discord" default>
 
 ```
-/alert create governance
+/notification create governance
 ```
 
 <p>
@@ -116,7 +125,7 @@ In order for a governance polls to be accepted they must follow the standard use
 **Usage example**
 
 ```
-/alert create governance blockchain:Terra channel:#governance address:terra1... url:https://protocol.io/gov/%id% mention:@role
+/notification create governance blockchain:Terra channel:#governance address:terra1... url:https://protocol.io/gov/%id% mention:@role
 ```
 
 </TabItem>
@@ -138,7 +147,7 @@ In order for a governance polls to be accepted they must follow the standard use
 <TabItem value="discord" label="Discord" default>
 
 ```
-/alert create price
+/notification create price
 ```
 
 <p>
@@ -161,7 +170,7 @@ In order for a governance polls to be accepted they must follow the standard use
 **value\*:**
 
     type: String
-    description: The price you wish that the coin reaches in order to be notified.
+    description: The price you wish that the coin reaches in order to be alerted.
 
 **type\*:**
 
@@ -172,7 +181,7 @@ In order for a governance polls to be accepted they must follow the standard use
 **Example Usage:**
 
 ```
-/alert create price blockchain:Terra token:axlUSDT / LUNA Pair (Phoenix) price:5 type:greater than or equal to
+/notification create price blockchain:Terra token:axlUSDT / LUNA Pair (Phoenix) price:5 type:greater than or equal to
 ```
 
 </TabItem>
@@ -194,7 +203,7 @@ In order for a governance polls to be accepted they must follow the standard use
 <TabItem value="discord" label="Discord" default>
 
 ```
-/alert create wallet
+/notification create wallet
 ```
 
 <p>

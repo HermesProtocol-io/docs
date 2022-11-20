@@ -1,6 +1,6 @@
 ---
-sidebar_label: Contract
-sidebar_position: 6
+sidebar_label: 📝 Contract
+sidebar_position: 2
 title: Contract
 ---
 
@@ -12,9 +12,43 @@ import styles from "../styles.module.css";
 
 <!-- Documentation -->
 
+This command allows you to receive several informations regarding a smart contract in any of the supported blockchains.
+
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
-  🏗️ Under development ...
+
+```
+/get contract
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where that contract exists.
+    choices: [ Terra Classic, Terra ]
+
+**address\*:**
+
+    type: String
+    description: contract address to obtain information from.
+
+**visibility:**
+
+    type: Options
+    description: Choose whenever the alert the bot sends is public (channel wide) or private (your eyes only).
+
+**Example Usage**
+
+```
+/get contract blockchain:terra address:terra(...)08 visibility: public
+```
+
 </TabItem>
 
 <TabItem value="telegram" label="Telegram">

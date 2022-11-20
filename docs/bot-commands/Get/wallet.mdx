@@ -1,6 +1,6 @@
 ---
-sidebar_label: Wallet
-sidebar_position: 3
+sidebar_label: 💼 Wallet
+sidebar_position: 7
 title: Wallet
 ---
 
@@ -12,9 +12,43 @@ import styles from "../styles.module.css";
 
 <!-- Documentation -->
 
+This command allows you to check all the information of a specific wallet in any of the supported blockchains.
+
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
-  🏗️ Under development ...
+
+```
+/get wallet
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**address\*:**
+
+    type: String
+    description: Wallet address to get information from.
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where that address exists.
+    choices: [ Terra Classic, Terra ]
+
+**visibility:**
+
+    type: Options
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+
+**Example Usage**
+
+```
+/alert create wallet address:terra1... blockchain:Terra
+```
+
 </TabItem>
 
 <TabItem value="telegram" label="Telegram">

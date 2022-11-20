@@ -1,6 +1,6 @@
 ---
-sidebar_label: Transaction
-sidebar_position: 4
+sidebar_label: 🔁 Transaction
+sidebar_position: 5
 title: Transaction
 ---
 
@@ -12,11 +12,44 @@ import styles from "../styles.module.css";
 
 <!-- Documentation -->
 
+This command gets all the relevant informartion from a Transaction that was performed on one of the supported blockchains.
+
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
-  🏗️ Under development ...
-</TabItem>
 
+```
+/get Transaction
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where that contract exists.
+    choices: [ Terra Classic, Terra ]
+
+**hash\*:**
+
+    type: String
+    description: Transaction hash to obtain information from.
+
+**visibility:**
+
+    type: Options
+    description: Choose whenever the alert the bot sends is public (channel wide) or private (your eyes only).
+
+**Example Usage**
+
+```
+/get Transaction blockchain:terra hash:84797(...)6A visibility: public
+```
+
+</TabItem>
 <TabItem value="telegram" label="Telegram">
   🏗️ Under development ...
 </TabItem>
