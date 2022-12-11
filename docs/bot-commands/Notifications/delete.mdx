@@ -31,23 +31,18 @@ This command allows you to delete one your previously created notifications
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_
+\*_Required_\*
 
-**channel\*:**
-
-    type: Text Channel
-    description: Channel where the alert are being sent.
-
-**collection\*:**
+**id\*:**
 
     type: Options
-    description: NFT collection address to unsubscribe.
-    choices: [ Your NFT collections addresses ]
+    description: Allows you to delete one of the previously created NFT Feeds/Monitor.
+    choices: [ Your created alerts ]
 
 **Example Usage**
 
 ```
-/notification delete nft channel:#channel collection:terra1...
+/notification delete nft id:
 ```
 
 </TabItem>
@@ -76,26 +71,18 @@ This command allows you to delete one your previously created notifications
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_
+\*_Required_\*
 
-**channel\*:**
+**id\*:**
 
-    type: Text Channel
-    description: Channel where the polls are being sent to.
+    type: Options
+    description: Allows you to delete one of the previously created governance feeds.
+    choices: [ Your created alerts ]
 
-**address\*:**
-
-    type: String
-    description: Inserts the smart contract where the polls are created.
-
-:::note
-The only governance polls that are accepted must follow the standard used by Anchor Protocol and Mirror Protocol.
-:::
-
-Usage example:
+**Example Usage**
 
 ```
-/notification delete governance blockchain:Terra channel:#governance address:terra1...
+/notification delete governance id:
 ```
 
 </TabItem>
@@ -129,7 +116,7 @@ Usage example:
 **id\*:**
 
     type: Options
-    description: The alerts you previously created.
+    description: Allows you to delete one of the previously created price alerts.
     choices: [ Your created alerts ]
 
 **Example Usage**
@@ -162,17 +149,18 @@ Usage example:
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_
+\*_Required_\*
 
-**address\*:**
+**id\*:**
 
-    type: String
-    description: Wallet address to remove from your watch list.
+    type: Options
+    description: Allows you to delete one of the previously created wallet watchers.
+    choices: [ Your created alerts ]
 
 **Example Usage**
 
 ```
-/notification delete wallet address:terra1...
+/notification delete wallet id:
 ```
 
 </TabItem>
@@ -185,5 +173,205 @@ Usage example:
 
 <TabItem value="Twitter" label="Twitter">
   🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Domain Changes
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete domain changes
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_\*
+
+**id\*:**
+
+    type: Options
+    description: Allows you to delete one of the previously created domain changes alert.
+    choices: [ Your created alerts ]
+
+**Example Usage**
+
+```
+/notification delete domain changes id:
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Domain Registration
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete domain registration
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_\*
+
+**id\*:**
+
+    type: Options
+    description: Allows you to delete one of the previously created domain registration alert.
+    choices: [ Your created alerts ]
+
+**Example Usage**
+
+```
+/notification delete domain registration id:
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Liquid Staking
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete liquid staking
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_\*
+
+**id\*:**
+
+    type: Options
+    description: Allows you to delete one of the previously created liquid staking alert.
+    choices: [ Your created alerts ]
+
+**Example Usage**
+
+```
+/notification delete liquid staking id:
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Liquidity Pool
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete liquidity pool
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_\*
+
+**id\*:**
+
+    type: Options
+    description: Allows you to delete one of the previously created liquidity pool alert.
+    choices: [ Your created alerts ]
+
+**Example Usage**
+
+```
+/notification delete liquidity pool id:
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## New Domain
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete new domain
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_\*
+
+**id\*:**
+
+    type: Options
+    description: Allows you to delete one of the previously created new domain alert.
+    choices: [ Your created alerts ]
+
+**Example Usage**
+
+```
+/notification delete new domain id:
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
 </TabItem>
 </Tabs>

@@ -8,6 +8,8 @@ title: Create
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
 import styles from "../styles.module.css";
 
 <!-- Documentation -->
@@ -15,7 +17,7 @@ import styles from "../styles.module.css";
 This command allows you to create notifications in several notifications categories
 
 ```
-    /notification create
+/notification create
 ```
 
 ## NFT
@@ -24,7 +26,7 @@ This command allows you to create notifications in several notifications categor
 <TabItem value="discord" label="Discord" default>
 
 ```
-    /notification create nft
+/notification create nft
 ```
 
 <p>
@@ -35,41 +37,61 @@ This command allows you to create notifications in several notifications categor
 
 **blockchain\*:**
 
-    type: Options
+    type: Option
     description: Blockchain where that address exists.
     choices: [ Terra Classic, Terra ]
 
 **collection\*:**
 
-    type: Collection
+    type: Option
     description: NFT collection address to subscribe.
+    choices: [ NFT Collections supported on our Assets ]
 
 **token:**
 
-    type: ID
+    type: Option
     description: If this parameter is filled, you create an NFT Monitor for a specific NFT.
-
-:::info
-After running the command you will be prompted with a new message with some alert types to choose from, please press the ones you wish and if the button turns green your option is recorded.
-:::
+    choices: [ All NFT tokens from the collection previously selected ]
 
 **channel:**
 
-    type: Text Channel
+    type: Channel
     description: Channel to send the alerts.
+
+:::info
+After running the command you will be prompted with a message with some alert types to choose from, please press the ones you wish and if the button turns green your option is recorded.
+:::
 
 **Example Usage**
 
-```
-/notification create nft blockchain:Terra collection:terra1... channel: #channel
-```
+<Tabs>
+  <TabItem value="nftMonitor" label="NFT Monitor on DMs" default>
+    <CodeBlock>
+      /notification create nft blockchain:Terra collection:Skeleton Punks
+      token:Skeleton Punk #878 (878)
+    </CodeBlock>
+    <Admonition type="info">
+      <p>You must execute this command in the bot's DMs.</p>
+    </Admonition>
+  </TabItem>
+  <TabItem value="nftMonitorServer" label="NFT Monitor on Server">
+    <CodeBlock>
+      /notification create nft blockchain:Terra collection:Skeleton Punks
+      token:Skeleton Punk #878 (878) channel:#nft-channel
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="nftSales" label="NFT Sales">
+    <CodeBlock>
+      /notification create nft blockchain:Terra collection:Skeleton Punks
+      channel:#sales-channel
+    </CodeBlock>
+  </TabItem>
+</Tabs>
 
 </TabItem>
 
 <TabItem value="telegram" label="Telegram">
-
-🏗️ Under development ...
-
+  🏗️ Under development ...
 </TabItem>
 
 <TabItem value="twitter" label="Twitter">
@@ -94,19 +116,19 @@ After running the command you will be prompted with a new message with some aler
 
 **blockchain\*:**
 
-    type: Options
+    type: Option
     description: Blockchain where the poll exists.
     choices: [ Terra Classic, Terra ]
 
+**project\*:**
+
+    type: Option
+    description: Select the project from which you want to receive governance notifications.
+
 **channel\*:**
 
-    type: Text Channel
+    type: Channel
     description: Channel where the polls will be sent to.
-
-**address\*:**
-
-    type: String
-    description: Inserts the smart contract where the polls exists.
 
 :::note
 In order for a governance polls to be accepted they must follow the standard used by Anchor Protocol and Mirror Protocol.
@@ -114,7 +136,7 @@ In order for a governance polls to be accepted they must follow the standard use
 
 **url:**
 
-    type: link
+    type: URL
     description: Insert the protocol website where all the proposals https://protocol.io/gov/%id%.
 
 **mention:**
@@ -125,15 +147,13 @@ In order for a governance polls to be accepted they must follow the standard use
 **Usage example**
 
 ```
-/notification create governance blockchain:Terra channel:#governance address:terra1... url:https://protocol.io/gov/%id% mention:@role
+/notification create governance blockchain:Terra channel:#governance address:terra...09 url:https://protocol.io/gov/%id% mention:@role
 ```
 
 </TabItem>
 
 <TabItem value="telegram" label="Telegram">
-
-🏗️ Under development ...
-
+  🏗️ Under development ...
 </TabItem>
 
 <TabItem value="twitter" label="Twitter">
@@ -158,38 +178,48 @@ In order for a governance polls to be accepted they must follow the standard use
 
 **blockchain\*:**
 
-    type: Options
-    description: The blockchain where the coin exist to.
+    type: Option
+    description: The blockchain where the pair exist to.
     choices: [ Terra Classic, Terra ]
 
-**token\*:**
+**dex\*:**
 
-    type: String
-    description: The cryptocurrency you wish to create the price alert for.
+    type: Option
+    description: The dex you wish to check the price of.
+    choices: [ All DEXs supported on our Assets ]
 
-**value\*:**
+**pair\*:**
 
-    type: String
+    type: Option
+    description: The pair you wish to create the price alert for.
+    choices: [ All pairs supported by the selected dex on our Assets ]
+
+**price\*:**
+
+    type: Number
     description: The price you wish that the coin reaches in order to be alerted.
 
-**type\*:**
+**type:\***
 
-    type: Options
-    description: Define on what condition relative to the value you will be notified
-    choices: [ greater than or equal to, greater than, lower than or equal to, lower than, equal to ]
+    type: Option
+    description: The type of liquidity staking you wish to be notified about.
+    choices: [ >=, =, <=, <, > ]
+
+**channel\*:**
+
+    type: Channel
+    description: Channel where the price will be sent to.
 
 **Example Usage:**
 
 ```
-/notification create price blockchain:Terra token:axlUSDT / LUNA Pair (Phoenix) price:5 type:greater than or equal to
+/notification create price blockchain:Terra dex:Phoenix Finance pair:axlUSDC / axlUSDT Pair price:12 type:greater than
 ```
 
 </TabItem>
 
 <TabItem value="telegram" label="Telegram">
-
-🏗️ Under development ...
-
+  🏗️ Under development ...
 </TabItem>
 
 <TabItem value="twitter" label="Twitter">
@@ -212,31 +242,399 @@ In order for a governance polls to be accepted they must follow the standard use
 
 \*_Required_
 
+**blockchain\*:**
+
+    type: Option
+    description: Blockchain where that address exists.
+    choices: [ Terra Classic, Terra ]
+
 **address\*:**
 
     type: String
     description: Wallet address to observe.
 
-**blockchain\*:**
+**channel\*:**
 
-    type: Options
-    description: Blockchain where that address exists.
-    choices: [ Terra Classic, Terra ]
+    type: Channel
+    description: Channel where the wallet watch will be sent to.
 
 **Example Usage**
 
 ```
-/alert create wallet address:terra1... blockchain:Terra
+/alert create wallet address:terra...78 blockchain:Terra
 ```
 
 </TabItem>
 
 <TabItem value="telegram" label="Telegram">
-
 🏗️ Under development ...
-
 </TabItem>
 <TabItem value="Twitter" label="Twitter">
   🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Domain Changes
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create domain-changes
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain:\***
+
+    type: Option
+    description: Blockchain where that domain exists.
+    choices: [ Terra Classic, Terra ]
+
+**domain:**
+
+    type: String | Regex
+    description: The domain you want to be alerted about | Regex to match single or multiple domains.
+
+:::info
+
+- Keep in mind that the domain must be in the format of `domain.tld` and not just the name of the domain.
+- If you provide a regex you must set the `regex` parameter to true.
+- If you want to match multiple domains you can use the regex `.*` to match any character and `|` to separate the domains.
+
+:::
+
+**regex:**
+
+    type: Boolean
+    description: Whether to use regex or not in the domain.
+    choices: [ True or False ]
+
+**channel:**
+
+    type: Channel
+    description: Channel where the domain changes alerts will be sent to
+
+:::info
+After running the command you will be prompted with a new message with some alert types to choose from, please press the ones you wish and if the button turns green your option is recorded.
+:::
+
+**Example Usage**
+
+```
+/notification create domain-changes blockchain: Terra domain: Hermes Protocol channel: #domain feed
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Domain Registration
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create domain-registration
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain:\***
+
+    type: Option
+    description: Blockchain where that domain exists.
+    choices: [ Terra Classic, Terra ]
+
+**domain:**
+
+    type: String
+    description: The domain you want to be alerted about.
+
+:::caution
+Only registered domains are supported.
+:::
+
+**channel:**
+
+    type: Channel
+    description: Channel where the domain registration alerts will be sent to
+
+:::info
+After running this command you will be prompted to choose the type of notifications you wish (upon renewal, 24h, 48h, 1w, 1mo, upon expiration)
+:::
+
+:::caution
+While this feature can already be configured, it isn't live yet. It'll start working automatically once it's live.
+:::
+
+**Example Usage**
+
+```
+/notification create domain-registration blockchain: Terra domain: Hermes Protocol channel: #domain feed
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Liquid Staking
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create liquid-staking
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain:\***
+
+    type: Option
+    description: Blockchain where that domain exists.
+    choices: [ Terra Classic, Terra ]
+
+**type:\***
+
+    type: Option
+    description: The type of liquidity staking you wish to be notified about.
+    choices: [  >=, =, <=, <, > ]
+
+**amount:\***
+
+    type: Number
+    description: The value you wish the liquidity to achieve in order to be notified.
+
+**wallet:**
+
+    type: Address
+    description: The wallet address you want to be alerted about.
+
+:::note
+Wallet is optional only in servers, you must provide it in DMs.
+:::
+
+**channel:**
+
+    type: Channel
+    description: Channel where the domain changes alerts will be sent to
+
+:::info
+After creating the notification you will be prompt to choose the type of notification you wish to receive.
+:::
+
+**Example Usage**
+
+```
+/notification create liquid-staking
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Liquidity Pool
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create liquid-staking
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Option
+    description: Blockchain where that domain exists.
+    choices: [ Terra Classic, Terra ]
+
+**dex:\***
+
+    type: Option
+    description: The dex you wish to be notified about.
+
+**pair:\***
+
+    type: Option
+    description: The token pair you wish to be notified about.
+
+**type:\***
+
+    type: Option
+    description: The type of liquidity staking you wish to be notified about.
+    choices: [  >=, =, <=, <, > ]
+
+**value:\***
+
+    type: Number
+    description: The value of liquidity staking to be reached in order for you to be notified.
+
+**token:**
+
+    type: Option
+    description: The token to be staked in order for you to be notified.
+
+**channel:**
+
+    type: Channel
+    description: Channel where the domain changes alerts will be sent to
+
+**Example Usage**
+
+```
+/notification create liquid-staking
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## New Domain
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create new-domain
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Option
+    description: Blockchain where that domain exists.
+    choices: [ Terra Classic, Terra ]
+
+**regex:**
+
+    type: Regex
+    description: The domain you want to be alerted about.
+
+**channel:\***
+
+    type: Channel
+    description: Channel where the domain changes alerts will be sent to
+
+:::warning
+This command can only be ran in a server channel.
+:::
+
+**Example Usage**
+
+```
+/notification create new-domain
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Validator
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create validator
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Option
+    description: Blockchain where that validator exists.
+    choices: [ Terra Classic, Terra ]
+
+**validator:**
+
+    type: Option
+    description: The validator you want to be notified about.
+    choices: [ All validators from the previously selected blockchain ]
+
+**channel:**
+
+    type: Channel
+    description: Channel where the profile changes alerts will be sent to
+
+**Example Usage**
+
+```
+/notification create validator blockchain:Terra validator:Hermes Protocol | Earn airdrops & more!
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
 </TabItem>
 </Tabs>
