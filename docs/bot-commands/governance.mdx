@@ -1,0 +1,161 @@
+---
+sidebar_label: 🏦 Governance
+sidebar_position: 2
+title: 🏦 Governance
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "./styles.module.css";
+
+<!-- Documentation -->
+
+This command is used to subscribe to all the governance polls that are created
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/governance
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Subscribe
+
+This command allows you you to create governance poll feed, where all the created polls are posted with a dedicated thread where users will be able to discuss.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/governance subscribe
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\*:**
+
+    type: Options
+    description: Blockchain where the poll exists.
+    choices: [ Terra Classic, Terra ]
+
+**channel\*:**
+
+    type: Text Channel
+    description: Channel where the polls will be sent to.
+
+**address\*:**
+
+    type: String
+    description: Inserts the smart contract where the polls exists.
+
+:::note
+In order for a governance polls to be accepted they must follow the standard used by Anchor Protocol and Mirror Protocol.
+:::
+
+**url:**
+
+    type: link
+    description: Insert the protocol website where all the proposals https://protocol.io/gov/%id%.
+
+**mention:**
+
+    type : Role
+    description: Insert which role you wish to mention whenever a new poll is posted.
+
+**Usage example**
+
+```
+/governance subscribe blockchain:Terra channel:#governance address:terra1... url:https://protocol.io/gov/%id% mention:@role
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Unsubscribe
+
+The Governance unsubscribe command allows you to stop receiving the polls on the channel you chose.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/governance unsubscribe
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**channel\*:**
+
+    type: Text Channel
+    description: Channel where the polls are being sent to.
+
+**address\*:**
+
+    type: String
+    description: Inserts the smart contract where the polls are created.
+
+:::note
+The only governance polls that are accepted must follow the standard used by Anchor Protocol and Mirror Protocol.
+:::
+
+Usage example:
+
+```
+/governance unsubscribe blockchain:Terra channel:#governance address:terra1...
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## List
+
+This commands allows you to list all the governance polls you are currently subscribed to.
+
+<Tabs groupId="platforms">
+  <TabItem value="discord" label="Discord" default>
+    🏗️ Under development ...
+  </TabItem>
+  <TabItem value="telegram" label="Telegram" default>
+    🏗️ Under development ...
+  </TabItem>
+  <TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+  </TabItem>
+</Tabs>

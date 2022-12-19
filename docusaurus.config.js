@@ -75,6 +75,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       imageZoom: {
+        selector: ".markdown :not(em) > img",
         options: {
           background: "rgba(0,0,0,0.8)",
         },
