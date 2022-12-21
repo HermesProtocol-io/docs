@@ -1,7 +1,7 @@
 ---
-sidebar_label: ➖ Delete
+title: ➖ Delete
 sidebar_position: 4
-title: Delete
+description: This command provides the ability to delete a notification that you have previously created. Simply select the notification you wish to delete, and it will be removed from your account.
 ---
 
 <!-- Imports -->
@@ -11,10 +11,10 @@ import TabItem from "@theme/TabItem";
 
 <!-- Documentation -->
 
-This command allows you to delete one your previously created notifications
+This command provides the ability to delete a notification that you have previously created. Simply select the notification you wish to delete, and it will be removed from your account.
 
 ```
-    /notification delete
+/notification delete
 ```
 
 ## NFT
@@ -30,18 +30,18 @@ This command allows you to delete one your previously created notifications
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created NFT Feeds/Monitor.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created NFT notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete nft id:
+/notification delete nft id:NFT Monitor for Skeleton Punks (Skeleton Punk #878) on Terra (DMs)
 ```
 
 </TabItem>
@@ -63,25 +63,25 @@ This command allows you to delete one your previously created notifications
 <TabItem value="discord" label="Discord" default>
 
 ```
-/notification delete governance
+/notification delete gov
 ```
 
 <p>
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created governance feeds.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created Governance notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete governance id:
+/notification delete gov id:Governance Poll for Astroport on Terra (DMs)
 ```
 
 </TabItem>
@@ -110,18 +110,18 @@ This command allows you to delete one your previously created notifications
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created price alerts.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created Price notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete price id: price alert for ...
+/notification delete price id:Price Alert for ASTRO / LUNA Pair (Astroport) on Terra (DMs)
 ```
 
 </TabItem>
@@ -148,18 +148,18 @@ This command allows you to delete one your previously created notifications
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created wallet watchers.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created Wallet Watcher notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete wallet id:
+/notification delete wallet id:Wallet Watcher for terra..3ea on Terra
 ```
 
 </TabItem>
@@ -175,31 +175,31 @@ This command allows you to delete one your previously created notifications
 </TabItem>
 </Tabs>
 
-## Domain Changes
+## Validator
 
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
 
 ```
-/notification delete domain changes
+/notification delete validator
 ```
 
 <p>
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created domain changes alert.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created Validator Profile Changes notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete domain changes id:
+/notification delete wallet id:Profile Changes
 ```
 
 </TabItem>
@@ -210,36 +210,36 @@ This command allows you to delete one your previously created notifications
 
 </TabItem>
 
-<TabItem value="twitter" label="Twitter">
-🏗️ Under development ...
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
 </TabItem>
 </Tabs>
 
-## Domain Registration
+## Liquidity Pool
 
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
 
 ```
-/notification delete domain registration
+/notification delete liquidity-pool
 ```
 
 <p>
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created domain registration alert.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created Liquidity Pool notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete domain registration id:
+/notification delete liquidity-pool id:Liquidity Pool
 ```
 
 </TabItem>
@@ -261,25 +261,25 @@ This command allows you to delete one your previously created notifications
 <TabItem value="discord" label="Discord" default>
 
 ```
-/notification delete liquid staking
+/notification delete liquid-staking
 ```
 
 <p>
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created liquid staking alert.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created Liquid Staking notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete liquid staking id:
+/notification delete liquid-staking id:Liquid Staking for Backbone Labs/Gravedigger on Terra (DMs)
 ```
 
 </TabItem>
@@ -295,31 +295,71 @@ This command allows you to delete one your previously created notifications
 </TabItem>
 </Tabs>
 
-## Liquidity Pool
+## Domain Changes
 
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
 
 ```
-/notification delete liquidity pool
+/notification delete domain-changes
 ```
 
 <p>
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created liquidity pool alert.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created Domain Changes notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete liquidity pool id:
+/notification delete domain-changes id:Domain Changes for alien on Terra (Awesome Server)
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Domain Registration
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete domain-registration
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created Domain Registration notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete domain-registration id:Domain Registration for alien on Terra (Awesome Server)
 ```
 
 </TabItem>
@@ -341,25 +381,25 @@ This command allows you to delete one your previously created notifications
 <TabItem value="discord" label="Discord" default>
 
 ```
-/notification delete new domain
+/notification delete new-domain
 ```
 
 <p>
   <strong>Parameters:</strong>
 </p>
 
-\*_Required_\*
+\*_Required_
 
-**id\*:**
+**id\***
 
-    type: Options
-    description: Allows you to delete one of the previously created new domain alert.
-    choices: [ Your created alerts ]
+    type: Option
+    description: Your previously created New Domain notifications.
+    choices: [ Your notifications ]
 
 **Example Usage**
 
 ```
-/notification delete new domain id:
+/notification delete new-domain id:New Domains
 ```
 
 </TabItem>
