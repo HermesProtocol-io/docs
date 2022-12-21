@@ -1,7 +1,7 @@
 ---
-sidebar_label: 🔁 Transaction
-sidebar_position: 10
-title: Transaction
+title: 🔁 Transaction
+sidebar_position: 2
+description: This command allows you to retrieve information about a specific transaction on a blockchain.
 ---
 
 <!-- Imports -->
@@ -11,13 +11,13 @@ import TabItem from "@theme/TabItem";
 
 <!-- Documentation -->
 
-This command gets all the relevant informartion from a Transaction that was performed on one of the supported blockchains.
+This command allows you to retrieve information about a specific transaction on a blockchain.
 
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
 
 ```
-/get Transaction
+/get transaction
 ```
 
 <p>
@@ -26,26 +26,28 @@ This command gets all the relevant informartion from a Transaction that was perf
 
 \*_Required_
 
-**blockchain\*:**
+**blockchain\***
 
-    type: Options
-    description: Blockchain where that contract exists.
+    type: Option
+    description: Blockchain where that transaction exists.
     choices: [ Terra Classic, Terra ]
 
-**hash\*:**
+**hash\***
 
     type: String
     description: Transaction hash to obtain information from.
 
-**visibility:**
+**visibility**
 
-    type: Options
-    description: Choose whenever the alert the bot sends is public (channel wide) or private (your eyes only).
+    type: Option
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+    choices: [ Public, Private ]
+    default: Public
 
 **Example Usage**
 
 ```
-/get transaction blockchain:terra hash:84797...6A visibility: public
+/get transaction blockchain:Terra hash:53A67446DE...2AA57F53B01A5E28
 ```
 
 </TabItem>

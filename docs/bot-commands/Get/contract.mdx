@@ -1,7 +1,7 @@
 ---
-sidebar_label: 📝 Contract
-sidebar_position: 2
-title: Contract
+title: 📝 Contract
+sidebar_position: 3
+description: This command allows you to retrieve information about a specific smart contract and execute queries on it.
 ---
 
 <!-- Imports -->
@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem";
 
 <!-- Documentation -->
 
-This command allows you to receive several informations regarding a smart contract in any of the supported blockchains.
+This command allows you to retrieve information about a specific smart contract and execute queries on it.
 
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
@@ -26,27 +26,37 @@ This command allows you to receive several informations regarding a smart contra
 
 \*_Required_
 
-**blockchain\*:**
+**blockchain\***
 
-    type: Options
-    description: Blockchain where that contract exists.
+    type: Option
+    description: Blockchain where that smart contract exists.
     choices: [ Terra Classic, Terra ]
 
-**address\*:**
+**address\***
 
     type: String
-    description: contract address to obtain information from.
+    description: Smart Contract to obtain information from.
 
-**visibility:**
+**visibility**
 
-    type: Options
-    description: Choose whenever the alert the bot sends is public (channel wide) or private (your eyes only).
+    type: Option
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+    choices: [ Public, Private ]
+    default: Public
 
 **Example Usage**
 
 ```
-/get contract blockchain:terra address:terra...08 visibility: public
+/get contract blockchain:terra address:terra...xd08 visibility: public
 ```
+
+:::info
+
+After executing this command, the bot will send you a message with the information about the smart contract, and all possible queries you can execute on it.
+
+To execute a query, just click on the button that display the query name you want to execute, a popup will appear and you will be able to provide the parameters for that query. Once you have provided all the information, click on the `Submit` button and the bot will send you the result of the query.
+
+:::
 
 </TabItem>
 

@@ -1,7 +1,7 @@
 ---
-sidebar_label: 🖼️ NFT
-sidebar_position: 8
-title: NFT
+title: 🖼️ NFT
+sidebar_position: 4
+description: This command allows you to retrieve information about a specific NFT.
 ---
 
 <!-- Imports -->
@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem";
 
 <!-- Documentation -->
 
-This commands allows you to get information from any specific NFT from the supported collections on the supported blockchains.
+This command allows you to retrieve information about a specific NFT.
 
 <Tabs groupId="platforms">
 <TabItem value="discord" label="Discord" default>
@@ -26,31 +26,34 @@ This commands allows you to get information from any specific NFT from the suppo
 
 \*_Required_
 
-**blockchain\*:**
+**blockchain\***
 
-    type: Options
-    description: Blockchain where the NFT exists.
+    type: Option
+    description: Blockchain where the NFT collection exists.
     choices: [ Terra Classic, Terra ]
 
-**collection\*:**
+**collection\***
 
-    type: Collection
-    description: Collection where the NFT you wish to check exists.
+    type: Option
+    description: Address of the NFT collection.
+    choices: [ NFT Collections supported on our Assets ]
 
-**ID:**
+**id\***
 
-    type: ID
-    description: ID of the NFT you wish to check the informartion of.
+    type: Number
+    description: Specific NFT Id from the collection.
 
-**visibility:**
+**visibility**
 
-    type: Options
+    type: Option
     description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+    choices: [ Public, Private ]
+    default: Public
 
 **Example Usage**
 
 ```
-/get nft blockchain: Terra collection: terra...p2 id: 10
+/get nft blockchain:Terra collection:Skeleton Punks id:878
 ```
 
 </TabItem>
