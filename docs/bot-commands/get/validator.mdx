@@ -1,0 +1,63 @@
+---
+title: ✔️ Validator
+sidebar_position: 5
+description: This command allows you to retrieve information about a specific validator, such as delegations, the total of delegators, and also the commission rate.
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<!-- Documentation -->
+
+This command allows you to retrieve information about a specific validator, such as delegations, the total of delegators, and also the commission rate.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+  
+```
+/get validator
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where that transaction exists.
+    choices: [ Terra Classic, Terra ]
+
+**address\***
+
+    type: Option
+    description: Validator to retrieve information from.
+    choices: [ All validators from the previously selected blockchain ]
+
+**visibility**
+
+    type: Option
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+    choices: [ Public, Private ]
+    default: Public
+
+**Example Usage**
+
+```
+/get validator blockchain:Terra address:Hermes Protocol | Earn airdrops & more!
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>

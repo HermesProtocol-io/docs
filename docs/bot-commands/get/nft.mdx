@@ -1,0 +1,68 @@
+---
+title: 🖼️ NFT
+sidebar_position: 4
+description: This command allows you to retrieve information about a specific NFT.
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<!-- Documentation -->
+
+This command allows you to retrieve information about a specific NFT.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/get nft
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where the NFT collection exists.
+    choices: [ Terra Classic, Terra ]
+
+**collection\***
+
+    type: Option
+    description: Address of the NFT collection.
+    choices: [ NFT Collections supported on our Assets ]
+
+**id\***
+
+    type: Number
+    description: Specific NFT Id from the collection.
+
+**visibility**
+
+    type: Option
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+    choices: [ Public, Private ]
+    default: Public
+
+**Example Usage**
+
+```
+/get nft blockchain:Terra collection:Skeleton Punks id:878
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>

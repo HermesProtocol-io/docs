@@ -1,0 +1,62 @@
+---
+title: 💼 Wallet
+sidebar_position: 6
+description: This command retrieves information about a specific wallet on a blockchain, including its balance and delegations.
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<!-- Documentation -->
+
+This command retrieves information about a specific wallet on a blockchain, including its balance and delegations.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/get wallet
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Options
+    description: Blockchain where that address exists.
+    choices: [ Terra Classic, Terra ]
+
+**address\***
+
+    type: String
+    description: Wallet address to get information from.
+
+**visibility**
+
+    type: Option
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+    choices: [ Public, Private ]
+    default: Public
+
+**Example Usage**
+
+```
+/get wallet blockchain:Terra address:terra..m60ydg
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>

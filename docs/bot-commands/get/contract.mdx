@@ -1,0 +1,70 @@
+---
+title: 📝 Contract
+sidebar_position: 3
+description: This command allows you to retrieve information about a specific smart contract and execute queries on it.
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<!-- Documentation -->
+
+This command allows you to retrieve information about a specific smart contract and execute queries on it.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/get contract
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where that smart contract exists.
+    choices: [ Terra Classic, Terra ]
+
+**address\***
+
+    type: String
+    description: Smart Contract to obtain information from.
+
+**visibility**
+
+    type: Option
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+    choices: [ Public, Private ]
+    default: Public
+
+**Example Usage**
+
+```
+/get contract blockchain:terra address:terra...xd08 visibility: public
+```
+
+:::info
+
+After executing this command, the bot will send you a message with the information about the smart contract, and all possible queries you can execute on it.
+
+To execute a query, just click on the button that display the query name you want to execute, a popup will appear and you will be able to provide the parameters for that query. Once you have provided all the information, click on the `Submit` button and the bot will send you the result of the query.
+
+:::
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>

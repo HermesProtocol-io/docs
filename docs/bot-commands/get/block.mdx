@@ -1,0 +1,67 @@
+---
+title: 🧊 Block
+sidebar_position: 1
+description: This command allows you to give block height from a blockchain and receive information about it, including the date it was added to the blockchain and the number of transactions it contains.
+---
+
+<!-- Imports -->
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<!-- Documentation -->
+
+This command allows you to give block height from a blockchain and receive information about it, including the date it was added to the blockchain and the number of transactions it contains.
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/get block
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain from where to obtain the most recent block.
+    choices: [ Terra Classic, Terra ]
+
+**height**
+
+    type: Number
+    description: Block height to get information from.
+    default: Last block added to the blockchain
+
+:::info
+If this parameter is omitted you will get information regarding the most recent block.
+:::
+
+**visibility**
+
+    type: Option
+    description: Choose whenever the message the bot sends is public (channel wide) or private (your eyes only).
+    choices: [ Public, Private ]
+    default: Public
+
+**Example Usage**
+
+```
+/get block blockchain:Terra height:287651 visibility:public
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
