@@ -1,0 +1,50 @@
+---
+title: 🔣 Generate Bytes
+sidebar_position: 2
+sidebar_class_name: api-method post
+description: This endpoint is used to generate random bytes for use in the **Terra Station** [`Signing Bytes`](https://docs.terra.money/develop/wallet-provider/sign-bytes/) method.
+---
+
+This endpoint is used to generate random bytes for use in the **Terra Station** [`Signing Bytes`](https://docs.terra.money/develop/wallet-provider/sign-bytes/) method.
+
+```
+POST /generate-bytes
+```
+
+### Request
+
+**Body Structure**
+
+_\*Required_
+
+**walletAddress\***
+
+    type: String
+    description: User's wallet address to generate bytes for
+
+**Example Request**
+
+```json
+{
+  "walletAddress": "terra194wmtg08x0t2qd2822hul6aj7gthhw4agx8ja4"
+}
+```
+
+### Response
+
+**Status Codes**
+
+| Code  | Description                  |
+| :---- | :--------------------------- |
+| `200` | Bytes successfully generated |
+| `400` | Invalid request              |
+
+**Example Response**
+
+```json
+{
+  "walletAddress": "terra194wmtg08x0t2qd2822hul6aj7gthhw4agx8ja4",
+  "bytes": "fa133948-4aa6-4e7c-a54b-0117ed9b4efe",
+  "status": 200
+}
+```

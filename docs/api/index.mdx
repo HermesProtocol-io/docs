@@ -1,0 +1,91 @@
+---
+title: ⚙️ API
+description: This API allows you to interact with the Hermes Protocol platform. It is used to create notification directly from your application.
+---
+
+<!-- Imports -->
+
+<!-- Documentation -->
+
+This API allows you to interact with the Hermes Protocol platform. It is used to create notification directly from your application.
+
+## Base URL
+
+```
+https://api.hermesprotocol.io/api/public
+```
+
+### Endpoints
+
+[**POST /verify-user**](verify-user)
+
+[**POST /generate-bytes**](generate-bytes)
+
+[**POST /notification**](notification)
+
+## Supported Notifications
+
+This are the supported notifications that you can create using the **Hermes Protocol** Public API.
+
+### Notifications
+
+#### Liquid Staking (Backbone Labs / Gravedigger)
+
+| NotificationTypeId | ChainId | CategoryId | ProjectId |
+| :----------------- | :------ | :--------- | :-------- |
+| 002_0029           | zb1_002 | zb3_0008   | zb2_0034  |
+
+**Notification Params**
+
+**contract**
+
+```
+terra1l2nd99yze5fszmhl5svyh5fky9wm4nz4etlgnztfu4e8809gd52q04n3ea
+```
+
+**tokenContract**
+
+```
+terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml
+```
+
+**stakes / queueUnbond / submitBatch / finishUnbond**
+
+| Param | Type       | Description                                                                          |
+| :---- | :--------- | :----------------------------------------------------------------------------------- |
+| flag  | boolean    | Whether the user want receive alert about this event or not                          |
+| value | number     | Value used on the event                                                              |
+| type  | comparison | Type of comparison used between the value configured and the value used on the event |
+
+Example
+
+```json
+{
+  "stakes": {
+    "flag": true,
+    "value": 10,
+    "type": "="
+  },
+  "queueUnbond": {
+    "flag": true,
+    "value": 25,
+    "type": "<"
+  },
+  "submitBatch": {
+    "flag": true,
+    "value": 12,
+    "type": "<="
+  },
+  "finishUnbond": {
+    "flag": true,
+    "value": 100,
+    "type": ">"
+  }
+}
+```
+
+**scope**
+
+```
+zc5_0001
+```

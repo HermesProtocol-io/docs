@@ -1,0 +1,49 @@
+---
+title: 👤 Verify User
+sidebar_position: 1
+sidebar_class_name: api-method post
+description: This endpoint is used to verify if the wallet provided is valid and belongs to the user, if the wallet is valid, the user's id will be returned.
+---
+
+This endpoint is used to verify if the wallet provided is valid and belongs to the user, if the wallet is valid, the user's id will be returned.
+
+```
+POST /verify-user
+```
+
+### Request
+
+**Body Structure**
+
+_\*Required_
+
+**walletAddress\***
+
+    type: String
+    description: Wallet address to verify
+
+**Example Request**
+
+```json
+{
+  "walletAddress": "terra194wmtg08x0t2qd2822hul6aj7gthhw4agx8ja4"
+}
+```
+
+### Response
+
+**Status Codes**
+
+| Code  | Description     |
+| :---- | :-------------- |
+| `200` | User exists     |
+| `400` | Invalid request |
+
+**Example Response**
+
+```json
+{
+  "user": "a9c8e884-133a-4dfa-85c0-03ea8cdf56bc",
+  "status": 200
+}
+```
