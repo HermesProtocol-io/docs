@@ -23,6 +23,27 @@ https://api.hermesprotocol.io/api/public
 
 [**POST /notification**](notification) - Create a notification so that users are alerted 
 
+### User Interaction flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Front-end
+    participant Generate Bytes API
+    participant Notification API
+    User->>Front-end: Clicks 🔔 button
+    Front-end-->>User: Shows pop-up to pick options
+    User->>Front-end: Fills everything and <br/>clicks "Add Notification"
+    Front-end->>Generate Bytes API: Requests a nonce for <br/>the user to sign
+    Generate Bytes API-->>Front-end: Returns the nonce if the user <br/>exists on Hermes Protocol
+    Front-end-->>User: Requests signing a message <br/>with the notification info + nonce
+    User->>Front-end: Signs the message
+    Front-end->>Notification API: Requests for the notification <br/>to be added to the user
+    Notification API-->>Front-end: Returns one of multiple status codes, <br/>depending if the user has a linked social <br/>account already, among other things.
+    Front-end-->>User: Users sees final confirmation
+```
+
+
 ## Supported Notifications
 
 These are the supported notifications that you can create using the **Hermes Protocol** Public API.
