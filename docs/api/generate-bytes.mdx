@@ -2,10 +2,10 @@
 title: 🔣 Generate Bytes
 sidebar_position: 2
 sidebar_class_name: api-method post
-description: This endpoint is used to generate random bytes for use in the **Terra Station** [`Signing Bytes`](https://docs.terra.money/develop/wallet-provider/sign-bytes/) method.
+description: This endpoint is used to generate random bytes for use in wallet signatures (such as **Terra Station**'s [`Signing Bytes`](https://docs.terra.money/develop/wallet-provider/sign-bytes/) method).
 ---
 
-This endpoint is used to generate random bytes for use in the **Terra Station** [`Signing Bytes`](https://docs.terra.money/develop/wallet-provider/sign-bytes/) method.
+This endpoint is used to generate a [nonce](https://www.okta.com/identity-101/nonce/) (that protects against replay attacks) for use in wallet signatures (such as **Terra Station**'s [`Signing Bytes`](https://docs.terra.money/develop/wallet-provider/sign-bytes/) method).
 
 ```
 POST /generate-bytes
