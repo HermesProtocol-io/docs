@@ -5,9 +5,9 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+module.exports = {
   title: "Hermes Protocol Documentation",
-  tagline: "Dinosaurs are cool",
+  tagline: "Hermes Protocol is a communications platform that allows users to receive instant alerts about on-chain events.",
   url: "https://docs.hemesprotocol.io/",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
+  organizationName: "HermesProtocol-io", // Usually your GitHub org/user name.
   projectName: "Hermes Protocol Documentation", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -41,7 +41,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/HermesProtocol-io/docs/tree/main/",
         },
         blog: false,
         theme: {
@@ -89,5 +89,3 @@ const config = {
     [require.resolve("@easyops-cn/docusaurus-search-local"), {}],
   ],
 };
-
-module.exports = config;
