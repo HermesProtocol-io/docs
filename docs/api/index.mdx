@@ -40,6 +40,7 @@ sequenceDiagram
     User->>Front-end: Signs the message
     Front-end->>Notification API: Requests for the notification <br/>to be added to the user
     Notification API-->>Front-end: Returns one of multiple status codes, <br/>depending if the user has a linked social <br/>account already, among other things.
+    Note right of Notification API: Possible HTTP <br/>status codes: <br/>200, 202, 400, 401
     Front-end-->>User: Users sees final confirmation
 ```
 
