@@ -1,1 +1,2 @@
-/api/ /public-api 301
+/api/ /public-api/ 301
+/api /public-api/ 301
