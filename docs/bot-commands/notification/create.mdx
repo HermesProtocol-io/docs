@@ -236,19 +236,16 @@ Terra Classic, Terra, Astroport, Mirror Protocol and Anchor Protocol are the onl
 <Tabs groupId="alerts">
   <TabItem value="dms" label="DMs" default>
     <CodeBlock>
-      /notification create price blockchain:Terra dex:Terraswap pair:LUNA /
-      LunaX Pair price:0.9 type:lower than
+      /notification create price blockchain:Terra dex:Astroport pair:bLUNA / LUNA Pair price:0.9 type:lower than
     </CodeBlock>
   </TabItem>
   <TabItem value="server" label="Server">
     <CodeBlock title="with channel">
-      /notification create price blockchain:Terra dex:Terraswap pair:LUNA /
-      LunaX Pair price:0.9 type:lower than channel:#prices
+      /notification create price blockchain:Terra dex:Terraswap pair:bLUNA / LUNA Pair price:0.9 type:lower than channel:#price-talk
     </CodeBlock>
     <p>or</p>
     <CodeBlock title="without channel">
-      /notification create price blockchain:Terra dex:Terraswap pair:LUNA /
-      LunaX Pair price:0.9 type:lower than
+      /notification create price blockchain:Terra dex:Terraswap pair:bLUNA / LUNA Pair price:0.9 type:lower than
     </CodeBlock>
   </TabItem>
 </Tabs>
