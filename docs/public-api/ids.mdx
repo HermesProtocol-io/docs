@@ -1,0 +1,126 @@
+---
+title: 🆔 IDs
+sidebar_position: 1
+description: List of IDs for each project, blockchain, category, etc.
+---
+
+For now, Hermes Protocol uses internal IDs manually generated for each blockchain, project, category and notification.
+Eventually all IDs will be made available, easily accessible and human-readable, on our [Assets repository](https://github.com/HermesProtocol-io/assets) which has [its own documentation](https://assets.hermesprotocol.io/).
+
+### Chain IDs
+
+| Human Name    | Camel Case   | chainId |
+| :------------ | :----------- | :------ |
+| Terra Classic | terraClassic | zb1_001 |
+| Terra         | terra        | zb1_002 |
+| Near          | near         | zb1_003 |
+| Radix         | radix        | zb1_005 |
+
+
+### Category IDs
+
+| Category Name            | categoryId |
+| :----------------------  | :--------- |
+| DEX                      | zb3_0001   |
+| Derivatives              | zb3_0002   |
+| NFT Marketplaces         | zb3_0003   |
+| Blockchain               | zb3_0004   |
+| Launchpad                | zb3_0005   |
+| Lending                  | zb3_0006   |
+| Staking                  | zb3_0008   |
+| Domain System            | zb3_0011   |
+| Automation               | zb3_0012   |
+
+
+### Project IDs
+
+| Project Name              | projectId | chaindId         | categoryId | Status             |
+| :------------------------ | :-------- | :--------------- | :--------- | :----------------- |
+| Anchor Protocol           | zb2_0001  | zb1_001          | zb3_0006   | DEPRECATED         |
+| Pylon Protocol            | zb2_0002  | zb1_001          | zb3_0005   | UNDER CONSTRUCTION |
+| Terraswap                 | zb2_0003  | zb1_001, zb1_002 | zb3_0001   | OK                 |
+| Astroport                 | zb2_0004  | zb1_001, zb1_002 | zb3_0001   | OK                 |
+| Loop                      | zb2_0005  | zb1_001          | zb3_0001   | UNDER CONSTRUCTION |
+| Mirror Protocol           | zb2_0006  | zb1_001          | zb3_0001   | UNDER CONSTRUCTION |
+| StarTerra                 | zb2_0007  | zb1_001          | zb3_0005   | UNDER CONSTRUCTION |
+| Apollo DAO                | zb2_0009  | zb1_002          | zb3_0007   | UNDER CONSTRUCTION |
+| Spectrum                  | zb2_0010  | zb1_001          | zb3_0010   | UNDER CONSTRUCTION |
+| Validators                | zb2_0011  | zb1_001, zb1_002 | zb3_0004   | OK                 |
+| General                   | zb2_0012  | zb1_001, zb1_002 | zb3_0004   | OK                 |
+| Mars Protocol             | zb2_0013  | zb1_001          | zb3_0006   | UNDER CONSTRUCTION |
+| Suberra                   | zb2_0014  | zb1_001          | zb3_0008   | DEPRECATED         |
+| Capapult                  | zb2_0016  | zb1_001          | zb3_0008   | UNDER CONSTRUCTION |
+| Edge Protocol             | zb2_0017  | zb1_001          | zb3_0006   | UNDER CONSTRUCTION |
+| Prism                     | zb2_0018  | zb1_001          | zb3_0009   | UNDER CONSTRUCTION |
+| Phoenix Finance           | zb2_0020  | zb1_002          | zb3_0001   | OK                 |
+| Stader Labs               | zb2_0021  | zb1_001          | zb3_0009   | UNDER CONSTRUCTION |
+| Eris Protocol             | zb2_0022  | zb1_001          | zb3_0009   | UNDER CONSTRUCTION |
+| Steak                     | zb2_0023  | zb1_001          | zb3_0009   | UNDER CONSTRUCTION |
+| Random Earth              | zb2_0024  | zb1_001 zb1_002  | zb3_0003   | OK                 |
+| Knowhere Art              | zb2_0025  | zb1_002          | zb3_0003   | DEPRECATED         |
+| Talis Protocol            | zb2_0027  | zb1_001, zb1_002 | zb3_0003   | OK                 |
+| Ref.Finance               | zb2_0029  | zb1_003          | zb3_0001   | UNDER CONSTRUCTION |
+| Trisolaris                | zb2_0030  | zb1_003          | zb3_0001   | UNDER CONSTRUCTION |
+| Paras                     | zb2_0031  | zb1_003          | zb3_0003   | UNDER CONSTRUCTION |
+| Mintbase                  | zb2_0032  | zb1_003          | zb3_0003   | UNDER CONSTRUCTION |
+| Backbone Labs/Gravedigger | zb2_0034  | zb1_002          | zb3_0008   | OK                 |
+| LNS                       | zb2_0035  | zb1_002          | zb3_0011   | OK                 |
+| Warp Protocol             | zb2_0036  | zb1_002          | zb3_0012   | UNDER CONSTRUCTION |
+| Valkyrie Protoco          | zb2_0036  | zb1_002          | zb3_0005   | OK                 |
+| All Marketplaces          | zb2_9992  | zb1_001  zb1_002 | zb3_0003   | OK                 |
+
+
+### Notification Type IDs
+
+| Notification Type        | notificationTypeId |
+| :----------------------  | :----------------- |
+| Profile Changes          | 0003               |
+| Governance Poll          | 0007               |
+| NFT Monitor              | 0020               |
+| Price Alert              | 0021               |
+| Wallet Watcher           | 0024               |
+| New Sale                 | 0027               |
+| Liquidity Pool           | 0028               |
+| Liquid Staking           | 0029               |
+| Domain Changes           | 0030               |
+| Staking                  | 0033               |
+| Job                      | 0034               |
+| Cast Vote                | 0037               |
+
+
+### Scope
+
+| scope    | Scope Type      | Description                                        | Notification Type                                     |
+| :------- | :-------------- | :------------------------------------------------- | :---------------------------------------------------- |
+| zc5_0001 | My Wallet       | Scope is the wallet of the user                    | NFT Monitor, Profile Changes, Staking, Liquid Staking |
+| zc5_0002 | Unique          | Scope is an unique contract: NFT or Validator      | NFT Monitor, Profile Changes                          |
+| zc5_0003 | Other Wallet    | Scope is the wallet that do not belong to the user | Staking, Liquid Staking                               |
+| zc5_0004 | My Domain       | Scope is the domain registered in the user wallet  | Domain Changes, Domain Registration                   |
+| zc5_0005 | Other Domain    | Scope is a domain not associated to the user       | Domain Changes, Domain Registration                   |
+
+### Monitor options
+
+Parameter used exclusively on NFT Monitor Alert
+
+| optionId  | OptionType       |
+| :-------- | :--------------- |
+| zc6_0001  | Buy/Sell         |
+| zc6_0002  | List             |
+| zc6_0003  | Cancel List      |
+| zc6_0004  | Bid              |
+| zc6_0005  | Cancel Bid       |
+| zc6_0006  | Create Auction   |
+| zc6_0007  | Cancel Auction   |
+
+
+### Price Types
+
+Parameter used on: Price alert, Staking,  Liquid Staking
+
+| priceType  | Description              |
+| :--------- | :----------------------- |
+| >=         | greater than or equal to |
+| >          | greater than             |
+| <=         | lower than or equal to   |
+| <          | lower than               |
+| =          | equal to                 |

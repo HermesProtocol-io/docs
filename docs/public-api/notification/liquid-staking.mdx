@@ -1,0 +1,184 @@
+---
+title: Liquid Staking
+sidebar_position: 1
+sidebar_class_name: api-method post
+description: Liquid Staking post request parameters
+---
+
+
+<!-- Imports -->
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+| NotificationTypeId | NotificationType | 
+| :----------------- | :--------------- | 
+| 002_0029           | Liquid Staking   |
+
+
+### Request
+
+**Body Structure**
+
+ | Parameter                               | Requirement | Type    | Description                                                                                         |
+ | :-------------------------------------- | :---------- | :------ | :-------------------------------------------------------------------------------------------------- | 
+ | notificationParams.contract             | mandatory   | String  | Params of the notification                                                                          |
+ | notificationParams.tokenContract        | mandatory   | String  | Params of the notification                                                                          |
+ | notificationParams.stakes.flag          | mandatory   | Boolean | if the observation is made about staking movements in the blockchain                                |
+ | notificationParams.stakes.value         | optional    | Float   | value from when the staking is taken in consideration                                               |
+ | notificationParams.stakes.type          | optional    | String  | use [priceType](/public-api/ids) varible value from when the staking is taken in consideration      | 
+ | notificationParams.queueUnbond.flag     | mandatory   | Boolean | if the observation is made about queueUnbond movements in the blockchain                            |
+ | notificationParams.queueUnbond.value    | optional    | Float   | value from when the queueUnbond is taken in consideration                                           |
+ | notificationParams.queueUnbond.type     | optional    | String  | use [priceType](/public-api/ids) varible value from when the queueUnbond is taken in consideration  |
+ | notificationParams.submitBatch.flag     | mandatory   | Boolean | if the observation is made about submitBatch movements in the blockchain                            |
+ | notificationParams.submitBatch.value    | optional    | Float   | value from when the submitBatch is taken in consideration                                           |
+ | notificationParams.submitBatch.type     | optional    | String  | use [priceType](/public-api/ids) varible value from when the submitBatch is taken in consideration  |
+ | notificationParams.finishUnbond.flag    | mandatory   | Boolean | if the observation is made about finishUnbond movements in the blockchain                           |
+ | notificationParams.finishUnbond.value   | optional    | Float   | value from when the finishUnbond is taken in consideration                                          |
+ | notificationParams.finishUnbond.type    | optional    | String  | use [priceType](/public-api/ids) varible value from when the finishUnbond is taken in consideration |
+ | notificationParams.scope                | mandatory   | String  | use [scope](/public-api/ids) varible value                                                          |
+
+
+:::info
+
+In this section we only show the notification parameters  specific for liquid staking. To see the rest of the body structure please check the [notification](/public-api/notification) 
+
+:::
+
+
+
+### Live example
+
+[Here](https://gravedigger.backbonelabs.io/) you can find an example of the notifications set-up. This example was made using the following data:
+
+#### Backbone Labs / Gravedigger
+
+**Base parameters**
+
+| notificationTypeId | Notification Type| chainId | Chain Name| categoryId | Category Name|  projectId |  Project Name               |
+| :----------------- | :--------------- | :------ | :-------- | :--------- | :----------- | :--------- | :-------------------------- |
+| 002_0029           | Liquid Staking   | zb1_002 | Terra     | zb3_0008   | Staking      |  zb2_0034  |  Backbone Labs/Gravedigger  |
+
+
+If your project is not listed [here](/public-api/ids), and you want to integrate with us, please make a pull request in [this repository](https://github.com/HermesProtocol-io/assets). Please enter in our [Discord](https://discord.com/invite/RkZvDsWaGk) and talk with our team for technical support.
+
+**Notification Parameters**
+
+**contract**
+
+```
+terra1l2nd99yze5fszmhl5svyh5fky9wm4nz4etlgnztfu4e8809gd52q04n3ea
+```
+
+**tokenContract**
+
+```
+terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml
+```
+
+**stakes / queueUnbond / submitBatch / finishUnbond**
+
+| Param | Type       | Description                                                                          |
+| :---- | :--------- | :----------------------------------------------------------------------------------- |
+| flag  | Boolean    | Whether the user want receive alert about this event or not                          |
+| value | Float      | Value used on the event                                                              |
+| type  | String     | Type of comparison used between the value configured and the value used on the event |
+
+Example
+
+```json
+{
+  "stakes": {
+    "flag": true,
+    "value": 10,
+    "type": "="
+  },
+  "queueUnbond": {
+    "flag": true,
+    "value": 25,
+    "type": "<"
+  },
+  "submitBatch": {
+    "flag": true,
+    "value": 12,
+    "type": "<="
+  },
+  "finishUnbond": {
+    "flag": true,
+    "value": 100,
+    "type": ">"
+  }
+}
+```
+
+**scope**
+
+| scope    | ScopeType |
+| :------- | :-------- |
+| zc5_0001 | My wallet |
+
+**Example Body Structure**
+
+
+<Tabs groupId="platforms">
+  <TabItem value="request" label="Request" default>
+
+```json
+    {
+      "walletAddress": "terra194wmtg0...ja4",
+      "signBytesResult": {
+        "recid": 0,
+        "signature": {
+          "0": 227,
+          "..." : "...",
+          "63": 186
+        },
+        "public_key": "{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"xxx\"}"
+      },
+      "originalBytes": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "chainId": "zb1_002",
+      "categoryId": "zb3_0008",
+      "projectId": "zb2_0034",
+      "notificationTypeId": "002_0029",
+      "notificationParams": {
+        "contract": "terra1l2nd99yze5fszmhl5svyh5fky9wm4nz4etlgnztfu4e8809gd52q04n3ea",
+        "tokenContract": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+        "stakes": {
+          "flag": true,
+          "value": 10,
+          "type": "="
+        },
+        "queueUnbond": {
+          "flag": true,
+          "value": 25,
+          "type": "<"
+        },
+        "submitBatch": {
+          "flag": true,
+          "value": 12,
+          "type": "<="
+        },
+        "finishUnbond": {
+          "flag": true,
+          "value": 100,
+          "type": ">"
+        },
+        "scope": "zc5_0001"
+      }
+    }
+```
+  </TabItem>
+
+  <TabItem value="response" label="Response">
+
+```json
+    {
+      "walletAddress": "terra194wmtg0...ja4",
+      "bytes": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "status": 200
+    }
+```  
+
+  </TabItem>
+</Tabs> 
