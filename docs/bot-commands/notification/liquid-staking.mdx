@@ -1,0 +1,136 @@
+---
+title: Liquid Staking
+sidebar_position: 7
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create liquid-staking
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where that liquid staking exists.
+    choices: [ Terra Classic, Terra ]
+
+**type\***
+
+    type: Option
+    description: Type of comparison to be made with the liquid staking.
+    choices: [  >=, =, <=, <, > ]
+
+**amount\***
+
+    type: Number
+    description: Amount to be compared with the liquid staking.
+
+**wallet**
+
+    type: String
+    description: Wallet that executed the liquid staking.
+
+:::caution
+Wallet is optional **only** in servers, you **must** provide it in DMs.
+:::
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs groupId="alerts">
+  <TabItem value="dms" label="DMs" default>
+    <CodeBlock>
+      /notification create liquid-staking blockchain:Terra type:lower than or
+      equal to amount:23 wallet:terra...2x8
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="server" label="Server">
+    <CodeBlock title="with wallet and channel">
+      /notification create liquid-staking blockchain:Terra type:lower than or
+      equal to amount:23 wallet:terra...2x8 channel:#liquid-staking
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="without wallet and channel">
+      /notification create liquid-staking blockchain:Terra type:lower than or
+      equal to amount:23
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+:::info
+After creating the notification you will be prompt to choose the type of alerts you wish to receive.
+:::
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete liquid-staking
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created Liquid Staking notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete liquid-staking id:Liquid Staking for Backbone Labs/Gravedigger on Terra (DMs)
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
