@@ -19,25 +19,27 @@ import Admonition from "@theme/Admonition";
 
 ### Request
 
+To create a Liquid Staking notification using the Hermes Protocol API, construct the request body according to the [general structure](/public-api/notification). For the `notificationParams` object, adhere to the Body structure outlined below:
+
 **Body Structure**
 
- | Parameter                               | Requirement | Type    | Description                                                                                         |
- | :-------------------------------------- | :---------- | :------ | :-------------------------------------------------------------------------------------------------- | 
- | notificationParams.contract             | mandatory   | String  | Params of the notification                                                                          |
- | notificationParams.tokenContract        | mandatory   | String  | Params of the notification                                                                          |
- | notificationParams.stakes.flag          | mandatory   | Boolean | if the observation is made about staking movements in the blockchain                                |
- | notificationParams.stakes.value         | optional    | Float   | value from when the staking is taken in consideration                                               |
- | notificationParams.stakes.type          | optional    | String  | use [priceType](/public-api/ids) varible value from when the staking is taken in consideration      | 
- | notificationParams.queueUnbond.flag     | mandatory   | Boolean | if the observation is made about queueUnbond movements in the blockchain                            |
- | notificationParams.queueUnbond.value    | optional    | Float   | value from when the queueUnbond is taken in consideration                                           |
- | notificationParams.queueUnbond.type     | optional    | String  | use [priceType](/public-api/ids) varible value from when the queueUnbond is taken in consideration  |
- | notificationParams.submitBatch.flag     | mandatory   | Boolean | if the observation is made about submitBatch movements in the blockchain                            |
- | notificationParams.submitBatch.value    | optional    | Float   | value from when the submitBatch is taken in consideration                                           |
- | notificationParams.submitBatch.type     | optional    | String  | use [priceType](/public-api/ids) varible value from when the submitBatch is taken in consideration  |
- | notificationParams.finishUnbond.flag    | mandatory   | Boolean | if the observation is made about finishUnbond movements in the blockchain                           |
- | notificationParams.finishUnbond.value   | optional    | Float   | value from when the finishUnbond is taken in consideration                                          |
- | notificationParams.finishUnbond.type    | optional    | String  | use [priceType](/public-api/ids) varible value from when the finishUnbond is taken in consideration |
- | notificationParams.scope                | mandatory   | String  | use [scope](/public-api/ids) varible value                                                          |
+ | Parameter            | Requirement | Type    | Description                                                                                             |
+ | :------------------- | :---------- | :------ | :------------------------------------------------------------------------------------------------------ | 
+ | contract             | mandatory   | String  | Params of the notification                                                                              |
+ | tokenContract        | mandatory   | String  | Params of the notification                                                                              |
+ | stakes.flag          | mandatory   | Boolean | Trigger on staking events                                                                               |
+ | stakes.value         | optional    | Float   | Threshold Value                                                                                         |
+ | stakes.type          | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  | 
+ | queueUnbond.flag     | mandatory   | Boolean | Trigger on queueUnbond events                                                                           |
+ | queueUnbond.value    | optional    | Float   | Threshold Value                                                                                         |
+ | queueUnbond.type     | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  |
+ | submitBatch.flag     | mandatory   | Boolean | Trigger on submitBatch events                                                                           |
+ | submitBatch.value    | optional    | Float   | Threshold Value                                                                                         |
+ | submitBatch.type     | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  |
+ | finishUnbond.flag    | mandatory   | Boolean | Trigger on finishUnbond events                                                                          |
+ | finishUnbond.value   | optional    | Float   | Threshold Value                                                                                         |
+ | finishUnbond.type    | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Thresholdn |
+ | scope                | mandatory   | String  | See [scope](/public-api/ids#scope)                                                                      |
 
 
 :::info

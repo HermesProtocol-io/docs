@@ -1,19 +1,14 @@
 ---
-title: Wallet Watch
+title: Wallet Monitor
 sidebar_position: 1
 sidebar_class_name: api-method post
 description: Liquid Staking post request parameters
 ---
 
-
-
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import CodeBlock from "@theme/CodeBlock";
 import Admonition from "@theme/Admonition";
-
-
-
 
 | Blockchain        | NotificationTypeId | NotificationType | 
 | :---------------- | :----------------- | :--------------- | 
@@ -21,23 +16,17 @@ import Admonition from "@theme/Admonition";
 | Terra             | 002_0024           | Wallet Monitor   |
 | Radix             | 005_0024           | Wallet Monitor   |
 
-
 ### Request
 
-
-To create a Wallet Monitor notification using the Hermes API, construct the request body according to the [general structure](/public-api/notification). For the `notificationParams` section, adhere to the Body structure outlined below:
+To create a Wallet Monitor notification using the Hermes Protocol API, construct the request body according to the [general structure](/public-api/notification). For the `notificationParams` object, adhere to the Body structure outlined below:
 
 **Body Structure**
 
  | Parameter                               | Requirement | Type    | Description                                        |
  | :-------------------------------------- | :---------- | :------ | :------------------------------------------------- | 
- | notificationParams.walletAddress        | mandatory   | String  | Address that the user wants to watch               |
-
-
-
+ | walletAddress        | mandatory   | String  | Address that the user wants to monitor             |
 
 **Example Body Structure**
-
 
 <Tabs groupId="platforms">
   <TabItem value="request" label="Request" default>
