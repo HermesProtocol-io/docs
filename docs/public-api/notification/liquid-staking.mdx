@@ -1,20 +1,20 @@
 ---
 title: Liquid Staking
-sidebar_position: 1
+sidebar_position: 2
 sidebar_class_name: api-method post
 description: Liquid Staking post request parameters
 ---
 
 
-<!-- Imports -->
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import CodeBlock from "@theme/CodeBlock";
 import Admonition from "@theme/Admonition";
 
-| NotificationTypeId | NotificationType | 
-| :----------------- | :--------------- | 
-| 002_0029           | Liquid Staking   |
+| Blockchain        | NotificationTypeId | NotificationType | 
+| :---------------- | :----------------- | :--------------- | 
+| Terra             | 002_0029           | Liquid Staking   |
 
 
 ### Request
@@ -85,38 +85,13 @@ terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml
 | value | Float      | Value used on the event                                                              |
 | type  | String     | Type of comparison used between the value configured and the value used on the event |
 
-Example
-
-```json
-{
-  "stakes": {
-    "flag": true,
-    "value": 10,
-    "type": "="
-  },
-  "queueUnbond": {
-    "flag": true,
-    "value": 25,
-    "type": "<"
-  },
-  "submitBatch": {
-    "flag": true,
-    "value": 12,
-    "type": "<="
-  },
-  "finishUnbond": {
-    "flag": true,
-    "value": 100,
-    "type": ">"
-  }
-}
-```
 
 **scope**
 
-| scope    | ScopeType |
-| :------- | :-------- |
-| zc5_0001 | My wallet |
+| scope    | ScopeType    |
+| :------- | :----------- |
+| zc5_0001 | My wallet    |
+| zc5_0003 | Other wallet |
 
 **Example Body Structure**
 
@@ -127,19 +102,11 @@ Example
 ```json
     {
       "walletAddress": "terra194wmtg0...ja4",
-      "signBytesResult": {
-        "recid": 0,
-        "signature": {
-          "0": 227,
-          "..." : "...",
-          "63": 186
-        },
-        "public_key": "{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"xxx\"}"
-      },
+      "signBytesResult": "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx3",
       "originalBytes": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-      "chainId": "zb1_002",
-      "categoryId": "zb3_0008",
-      "projectId": "zb2_0034",
+      "chainId": "zb1_002", // Terra
+      "categoryId": "zb3_0008", // Staking
+      "projectId": "zb2_0034", // Backbone Labs
       "notificationTypeId": "002_0029",
       "notificationParams": {
         "contract": "terra1l2nd99yze5fszmhl5svyh5fky9wm4nz4etlgnztfu4e8809gd52q04n3ea",
@@ -173,10 +140,14 @@ Example
   <TabItem value="response" label="Response">
 
 ```json
-    {
-      "walletAddress": "terra194wmtg0...ja4",
-      "bytes": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-      "status": 200
+  {
+        "data": {
+            "user_id": "fxxxxxx0-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "notification_id": "bxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "status": "CREATED",
+            "timestamp": 1682174193510
+        },
+        "status": 200
     }
 ```  
 
