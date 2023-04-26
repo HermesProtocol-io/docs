@@ -5,17 +5,14 @@ sidebar_class_name: api-method post
 description: Liquid Staking post request parameters
 ---
 
-
-
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import CodeBlock from "@theme/CodeBlock";
 import Admonition from "@theme/Admonition";
 
-| Blockchain        | NotificationTypeId | NotificationType | 
-| :---------------- | :----------------- | :--------------- | 
-| Terra             | 002_0029           | Liquid Staking   |
-
+| Blockchain | NotificationTypeId | NotificationType |
+| :--------- | :----------------- | :--------------- |
+| Terra      | 002_0029           | Liquid Staking   |
 
 ### Request
 
@@ -23,32 +20,29 @@ To create a Liquid Staking notification using the Hermes Protocol API, construct
 
 **Body Structure**
 
- | Parameter            | Requirement | Type    | Description                                                                                             |
- | :------------------- | :---------- | :------ | :------------------------------------------------------------------------------------------------------ | 
- | contract             | mandatory   | String  | Params of the notification                                                                              |
- | tokenContract        | mandatory   | String  | Params of the notification                                                                              |
- | stakes.flag          | mandatory   | Boolean | Trigger on staking events                                                                               |
- | stakes.value         | optional    | Float   | Threshold Value                                                                                         |
- | stakes.type          | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  | 
- | queueUnbond.flag     | mandatory   | Boolean | Trigger on queueUnbond events                                                                           |
- | queueUnbond.value    | optional    | Float   | Threshold Value                                                                                         |
- | queueUnbond.type     | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  |
- | submitBatch.flag     | mandatory   | Boolean | Trigger on submitBatch events                                                                           |
- | submitBatch.value    | optional    | Float   | Threshold Value                                                                                         |
- | submitBatch.type     | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  |
- | finishUnbond.flag    | mandatory   | Boolean | Trigger on finishUnbond events                                                                          |
- | finishUnbond.value   | optional    | Float   | Threshold Value                                                                                         |
- | finishUnbond.type    | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Thresholdn |
- | scope                | mandatory   | String  | See [scope](/public-api/ids#scope)                                                                      |
-
+| Parameter          | Requirement | Type    | Description                                                                                             |
+| :----------------- | :---------- | :------ | :------------------------------------------------------------------------------------------------------ |
+| contract           | mandatory   | String  | Smart Contract Address                                                                                  |
+| tokenContract      | mandatory   | String  | Bonded Token Address                                                                                    |
+| stakes.flag        | mandatory   | Boolean | Trigger on staking events                                                                               |
+| stakes.value       | optional    | Float   | Threshold Value                                                                                         |
+| stakes.type        | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  |
+| queueUnbond.flag   | mandatory   | Boolean | Trigger on queueUnbond events                                                                           |
+| queueUnbond.value  | optional    | Float   | Threshold Value                                                                                         |
+| queueUnbond.type   | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  |
+| submitBatch.flag   | mandatory   | Boolean | Trigger on submitBatch events                                                                           |
+| submitBatch.value  | optional    | Float   | Threshold Value                                                                                         |
+| submitBatch.type   | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Threshold  |
+| finishUnbond.flag  | mandatory   | Boolean | Trigger on finishUnbond events                                                                          |
+| finishUnbond.value | optional    | Float   | Threshold Value                                                                                         |
+| finishUnbond.type  | optional    | String  | Use comparison operators (listed as [Price Types here](/public-api/ids#price-types)) for the Thresholdn |
+| scope              | mandatory   | String  | See [scope](/public-api/ids#scope)                                                                      |
 
 :::info
 
-In this section we only show the notification parameters  specific for liquid staking. To see the rest of the body structure please check the [notification](/public-api/notification) 
+In this section we only show the notification parameters specific for liquid staking. To see the rest of the body structure please check the [notification](/public-api/notification)
 
 :::
-
-
 
 ### Live example
 
@@ -58,10 +52,9 @@ In this section we only show the notification parameters  specific for liquid st
 
 **Base parameters**
 
-| notificationTypeId | Notification Type| chainId | Chain Name| categoryId | Category Name|  projectId |  Project Name               |
-| :----------------- | :--------------- | :------ | :-------- | :--------- | :----------- | :--------- | :-------------------------- |
-| 002_0029           | Liquid Staking   | zb1_002 | Terra     | zb3_0008   | Staking      |  zb2_0034  |  Backbone Labs/Gravedigger  |
-
+| notificationTypeId | Notification Type | chainId | Chain Name | categoryId | Category Name | projectId | Project Name              |
+| :----------------- | :---------------- | :------ | :--------- | :--------- | :------------ | :-------- | :------------------------ |
+| 002_0029           | Liquid Staking    | zb1_002 | Terra      | zb3_0008   | Staking       | zb2_0034  | Backbone Labs/Gravedigger |
 
 If your project is not listed [here](/public-api/ids), and you want to integrate with us, please make a pull request in [this repository](https://github.com/HermesProtocol-io/assets). Please enter in our [Discord](https://discord.com/invite/RkZvDsWaGk) and talk with our team for technical support.
 
@@ -81,12 +74,11 @@ terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml
 
 **stakes / queueUnbond / submitBatch / finishUnbond**
 
-| Param | Type       | Description                                                                          |
-| :---- | :--------- | :----------------------------------------------------------------------------------- |
-| flag  | Boolean    | Whether the user want receive alert about this event or not                          |
-| value | Float      | Value used on the event                                                              |
-| type  | String     | Type of comparison used between the value configured and the value used on the event |
-
+| Param | Type    | Description                                                                          |
+| :---- | :------ | :----------------------------------------------------------------------------------- |
+| flag  | Boolean | Whether the user want receive alert about this event or not                          |
+| value | Float   | Value used on the event                                                              |
+| type  | String  | Type of comparison used between the value configured and the value used on the event |
 
 **scope**
 
@@ -97,61 +89,61 @@ terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml
 
 **Example Body Structure**
 
-
 <Tabs groupId="platforms">
   <TabItem value="request" label="Request" default>
 
 ```json
-    {
-      "walletAddress": "terra194wmtg0...ja4",
-      "signBytesResult": "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx3",
-      "originalBytes": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-      "chainId": "zb1_002", // Terra
-      "categoryId": "zb3_0008", // Staking
-      "projectId": "zb2_0034", // Backbone Labs
-      "notificationTypeId": "002_0029",
-      "notificationParams": {
-        "contract": "terra1l2nd99yze5fszmhl5svyh5fky9wm4nz4etlgnztfu4e8809gd52q04n3ea",
-        "tokenContract": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
-        "stakes": {
-          "flag": true,
-          "value": 10,
-          "type": "="
-        },
-        "queueUnbond": {
-          "flag": true,
-          "value": 25,
-          "type": "<"
-        },
-        "submitBatch": {
-          "flag": true,
-          "value": 12,
-          "type": "<="
-        },
-        "finishUnbond": {
-          "flag": true,
-          "value": 100,
-          "type": ">"
-        },
-        "scope": "zc5_0001"
-      }
-    }
+{
+  "walletAddress": "terra194wmtg0...ja4",
+  "signBytesResult": "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx3",
+  "originalBytes": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "chainId": "zb1_002", // Terra
+  "categoryId": "zb3_0008", // Staking
+  "projectId": "zb2_0034", // Backbone Labs
+  "notificationTypeId": "002_0029",
+  "notificationParams": {
+    "contract": "terra1l2nd99yze5fszmhl5svyh5fky9wm4nz4etlgnztfu4e8809gd52q04n3ea",
+    "tokenContract": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml",
+    "stakes": {
+      "flag": true,
+      "value": 10,
+      "type": "="
+    },
+    "queueUnbond": {
+      "flag": true,
+      "value": 25,
+      "type": "<"
+    },
+    "submitBatch": {
+      "flag": true,
+      "value": 12,
+      "type": "<="
+    },
+    "finishUnbond": {
+      "flag": true,
+      "value": 100,
+      "type": ">"
+    },
+    "scope": "zc5_0001"
+  }
+}
 ```
+
   </TabItem>
 
   <TabItem value="response" label="Response">
 
 ```json
-  {
-        "data": {
-            "user_id": "fxxxxxx0-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "notification_id": "bxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "status": "CREATED",
-            "timestamp": 1682174193510
-        },
-        "status": 200
-    }
-```  
+{
+  "data": {
+    "user_id": "fxxxxxx0-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "notification_id": "bxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "status": "CREATED",
+    "timestamp": 1682174193510
+  },
+  "status": 200
+}
+```
 
   </TabItem>
-</Tabs> 
+</Tabs>

@@ -10,11 +10,11 @@ import TabItem from "@theme/TabItem";
 import CodeBlock from "@theme/CodeBlock";
 import Admonition from "@theme/Admonition";
 
-| Blockchain        | NotificationTypeId | NotificationType | 
-| :---------------- | :----------------- | :--------------- | 
-| Terra Classic     | 001_0024           | Wallet Monitor   |
-| Terra             | 002_0024           | Wallet Monitor   |
-| Radix             | 005_0024           | Wallet Monitor   |
+| Blockchain    | NotificationTypeId | NotificationType |
+| :------------ | :----------------- | :--------------- |
+| Terra Classic | 001_0024           | Wallet Monitor   |
+| Terra         | 002_0024           | Wallet Monitor   |
+| Radix         | 005_0024           | Wallet Monitor   |
 
 ### Request
 
@@ -22,9 +22,9 @@ To create a Wallet Monitor notification using the Hermes Protocol API, construct
 
 **Body Structure**
 
- | Parameter                               | Requirement | Type    | Description                                        |
- | :-------------------------------------- | :---------- | :------ | :------------------------------------------------- | 
- | walletAddress        | mandatory   | String  | Address that the user wants to monitor             |
+| Parameter     | Requirement | Type   | Description                            |
+| :------------ | :---------- | :----- | :------------------------------------- |
+| walletAddress | mandatory   | String | Address that the user wants to monitor |
 
 **Example Body Structure**
 
@@ -32,40 +32,41 @@ To create a Wallet Monitor notification using the Hermes Protocol API, construct
   <TabItem value="request" label="Request" default>
 
 ```json
-    {
-      "walletAddress": "rdx1q...my6trj",
-      "signBytesResult": "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx3",
-      "originalBytes": "8xxxxxax-axxx-4xxx-bxxx-axxxxxxxxxxf",
-      "chainId": "zb1_005", //Radix
-      "categoryId": "zb3_0004", // Blockchain
-      "projectId": "zb2_0012", // General
-      "notificationTypeId": "005_0024",
-      "notificationParams": {
-        "walletAddress": "rdx1q...my6trj"
-      }
-    }
+{
+  "walletAddress": "rdx1q...my6trj",
+  "signBytesResult": "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx3",
+  "originalBytes": "8xxxxxax-axxx-4xxx-bxxx-axxxxxxxxxxf",
+  "chainId": "zb1_005", //Radix
+  "categoryId": "zb3_0004", // Blockchain
+  "projectId": "zb2_0012", // General
+  "notificationTypeId": "005_0024",
+  "notificationParams": {
+    "walletAddress": "rdx1q...my6trj"
+  }
+}
 ```
+
   </TabItem>
 
   <TabItem value="response" label="Response">
 
 ```json
-  {
-      "data": {
-          "user_id": "fxxxxxx0-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-          "notification_id": "bxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-          "status": "CREATED",
-          "timestamp": 1682174193510
-      },
-      "status": 200
-  }
-```  
+{
+  "data": {
+    "user_id": "fxxxxxx0-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "notification_id": "bxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "status": "CREATED",
+    "timestamp": 1682174193510
+  },
+  "status": 200
+}
+```
 
 :::info
 
-In this section we only show the notification parameters  specific for liquid staking. To see the rest of the body structure please check the [notification](/public-api/notification) 
+In this section we only show the notification parameters specific for wallet monitor. To see the rest of the body structure please check the [notification](/public-api/notification)
 
 :::
 
   </TabItem>
-</Tabs> 
+</Tabs>
