@@ -1,0 +1,119 @@
+---
+title: Wallet Watcher
+sidebar_position: 4
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create wallet
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where the wallet address exists.
+    choices: [ Terra Classic, Terra ]
+
+**address\***
+
+    type: Option | String
+    description: Wallet to watch.
+    choices: [ All your connected wallets to your account ]
+
+:::info
+If you want to watch a wallet that is not connected to your account, you can insert the address directly.
+:::
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs groupId="alerts">
+  <TabItem value="dms" label="DMs" default>
+    <CodeBlock>
+      /notification create wallet blockchain:Terra Classic wallet:terra..2x8
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="server" label="Server">
+    <CodeBlock title="with channel">
+      /notification create wallet blockchain:Terra Classic wallet:terra..2x8
+      channel:#wallets
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="without channel">
+      /notification create wallet blockchain:Terra Classic wallet:terra..2x8
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+🏗️ Under development ...
+</TabItem>
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete wallet
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created Wallet Watcher notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete wallet id:Wallet Watcher for terra..3ea on Terra
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="Twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>

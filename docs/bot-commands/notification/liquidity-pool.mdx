@@ -1,0 +1,156 @@
+---
+title: Liquidity Pool
+sidebar_position: 6
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create liquidity-pool
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where the DEX exists.
+    choices: [ Terra Classic, Terra ]
+
+**dex\***
+
+    type: Option
+    description: DEX where the pair exists.
+    choices: [ All supported DEXs on our Assets ]
+
+**pair\***
+
+    type: Option
+    description: Pair of the liquidity pool you want to be alerted about.
+    choices: [ All supported pairs on the previously selected DEX ]
+
+**value\***
+
+    type: Number
+    description: Value to be compared with the liquidity pool.
+
+:::info
+
+If you do not specify a token, the value will be assumed as relative (%) to the total deposited/withdrawn in the liquidity pool when the alert is triggered.
+
+:::
+
+**type\***
+
+    type: Option
+    description: Type of comparison to be made.
+    choices: [  >=, =, <=, <, > ]
+
+**token**
+
+    type: Option
+    description: Token to be compared with the liquidity pool.
+    choices: [ Tokens involved in the previously selected pair ]
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs groupId="alerts">
+  <TabItem value="dms" label="DMs" default>
+    <CodeBlock title="absolute">
+      /notification create liquidity-pool blockchain:Terra dex:Phoenix Finance
+      pair:axlUSDC / LUNA Pair type:greater than value:10 token:LUNA
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="relative">
+      /notification create liquidity-pool blockchain:Terra dex:Phoenix Finance
+      pair:axlUSDC / LUNA Pair type:greater than value:10
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="server" label="Server">
+    <CodeBlock title="absolute with channel">
+      /notification create liquidity-pool blockchain:Terra dex:Phoenix Finance
+      pair:axlUSDC / LUNA Pair type:greater than value:10 channel:#lp-alerts
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="relative without channel">
+      /notification create liquidity-pool blockchain:Terra dex:Phoenix Finance
+      pair:axlUSDC / LUNA Pair type:greater than value:10 token:LUNA
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+:::info
+After creating the notification you will be prompt to choose the type of alerts you wish to receive.
+:::
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete liquidity-pool
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created Liquidity Pool notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete liquidity-pool id:Liquidity Pool
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>

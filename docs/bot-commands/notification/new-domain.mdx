@@ -1,0 +1,124 @@
+---
+title: New Domain
+sidebar_position: 8
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create new-domain
+```
+
+:::info
+This command can only be ran in a server.
+:::
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where the domain(s) exists.
+    choices: [ Terra Classic, Terra ]
+
+**regex**
+
+    type: Regex | String
+    description: Regex to match single or multiple domains. | Domain to be alerted about.
+
+:::info
+
+- Keep in mind that the domain must be in the format of `domain.tld` and not just the name of the domain.
+- If you want to match multiple domains you can either use the regex `.*` to match all domains or `|` to separate the domains.
+- You can also send the `regex` parameter empty to match all domains.
+- We recommend to use a regex builder as [regex101](https://regex101.com/) to build and test your regex.
+
+:::
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs groupId="alerts">
+  <TabItem value="server" label="Server" default>
+    <CodeBlock title="domain with channel">
+      /notification create new-domain blockchain:Terra regex:alien.luna
+      channel:#new-domains
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="regex without channel">
+      /notification create new-domain blockchain:Terra regex:alien.*\.luna
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete new-domain
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created New Domain notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete new-domain id:New Domains
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>

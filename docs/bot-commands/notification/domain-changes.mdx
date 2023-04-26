@@ -1,0 +1,138 @@
+---
+title: Domain Changes
+sidebar_position: 10
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create domain-changes
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where that domain exists.
+    choices: [ Terra Classic, Terra ]
+
+**domain**
+
+    type: String | Regex
+    description: Domain you want to be alerted about | Regex to match single or multiple domains.
+
+:::info
+
+- Keep in mind that the domain must be in the format of `domain.tld` and not just the name of the domain.
+- Regex is only supported in servers.
+- If you provide a regex, you must set the `regex` parameter to true.
+- If you want to match multiple domains you can either use the regex `.*` to match all domains or `|` to separate the domains.
+- We recommend to use a regex builder as [regex101](https://regex101.com/) to build and test your regex.
+
+:::
+
+**regex**
+
+    type: Boolean
+    description: Whether to use regex or not in the domain parameter.
+    choices: [ True or False ]
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs groupId="alerts">
+  <TabItem value="dms" label="DMs" default>
+    <CodeBlock title="domain">
+      /notification create domain-changes blockchain:Terra domain:anything.luna
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="server" label="Server">
+    <CodeBlock title=" domain with channel">
+      /notification create domain-changes blockchain:Terra domain:anything.luna
+      channel:#domain-changes
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="regex without channel">
+      /notification create domain-changes blockchain:Terra domain:any.*\.luna
+      regex:True
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+:::info
+After creating the notification you will be prompt to choose the type of alerts you wish to receive.
+:::
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete domain-changes
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created Domain Changes notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete domain-changes id:Domain Changes for alien on Terra (Awesome Server)
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>

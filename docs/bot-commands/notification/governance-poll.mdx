@@ -1,0 +1,125 @@
+---
+title: Governance Poll
+sidebar_position: 2
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create gov
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where the Governance exists.
+    choices: [ Terra Classic, Terra ]
+
+**project\***
+
+    type: Option
+    description: Select the project from which you want to receive new polls alerts.
+    choices: [ Supported projects from the previously selected blockchain ]
+
+:::info
+Terra Classic, Terra, Astroport, Mirror Protocol and Anchor Protocol are the only projects supported for now.
+:::
+
+**mention**
+
+    type : Role
+    description: Insert which role you wish to mention whenever a new poll is posted.
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs groupId="alerts">
+  <TabItem value="dms" label="DMs" default>
+    <CodeBlock>
+      /notification create gov blockchain:Terra project:Astroport
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="server" label="Server">
+    <CodeBlock title="with mention">
+      /notification create gov blockchain:Terra project:Astroport
+      channel:#gov-polls mention:@notf-gov
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="without mention">
+      /notification create gov blockchain:Terra project:Astroport
+      channel:#gov-polls
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete gov
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created Governance notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete gov id:Governance Poll for Astroport on Terra (DMs)
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+  🏗️ Under development ...
+</TabItem>
+</Tabs>
