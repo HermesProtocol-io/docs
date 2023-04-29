@@ -1,0 +1,140 @@
+---
+title: NFT Monitor
+sidebar_position: 1
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create nft
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where the NFT collection exists.
+    choices: [ Terra Classic, Terra ]
+
+**collection\***
+
+    type: Option
+    description: Address of the NFT collection.
+    choices: [ NFT Collections supported on our Assets ]
+
+**token**
+
+    type: Option
+    description: Specific NFT token from the collection to create a NFT Monitor.
+    choices: [ All NFT tokens from the collection previously selected ]
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs>
+  <TabItem value="nftMonitor" label="NFT Monitor on DMs" default>
+    <CodeBlock>
+      /notification create nft blockchain:Terra collection:Skeleton Punks
+      token:Skeleton Punk #878 (878)
+    </CodeBlock>
+    <Admonition type="info">
+      <p>
+        You will be prompted with a message with some alert types to choose
+        from, please press the ones you wish.
+      </p>
+    </Admonition>
+  </TabItem>
+  <TabItem value="nftMonitorServer" label="NFT Monitor on Server">
+    <CodeBlock>
+      /notification create nft blockchain:Terra collection:Skeleton Punks
+      token:Skeleton Punk #878 (878) channel:#nft-channel
+    </CodeBlock>
+    <Admonition type="info">
+      <p>
+        You will be prompted with a message with some alert types to choose
+        from, please press the ones you wish.
+      </p>
+    </Admonition>
+  </TabItem>
+  <TabItem value="nftSales" label="NFT Sales">
+    <CodeBlock>
+      /notification create nft blockchain:Terra collection:Skeleton Punks
+      channel:#sales-channel
+    </CodeBlock>
+    <Admonition type="info">
+      <p>This command is only executable on a server.</p>
+    </Admonition>
+  </TabItem>
+</Tabs>
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete nft
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created NFT notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete nft id:NFT Monitor for Skeleton Punks (Skeleton Punk #878) on Terra (DMs)
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>

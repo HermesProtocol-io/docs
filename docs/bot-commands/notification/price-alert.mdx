@@ -1,0 +1,128 @@
+---
+title: Price Alert
+sidebar_position: 3
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create price
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where the DEX exists.
+    choices: [ Terra Classic, Terra ]
+
+**dex\***
+
+    type: Option
+    description: DEX where the pair exists.
+    choices: [ All DEXs supported from the selected blockchain on our Assets ]
+
+**pair\***
+
+    type: Option
+    description: Pair you wish to create the price alert for.
+    choices: [ All pairs supported from the selected DEX on our Assets ]
+
+**price\***
+
+    type: Number
+    description: Price you wish to set as a trigger for the alert.
+
+**type\***
+
+    type: Option
+    description: Type of comparison you wish to make between the price and the price you set.
+    choices: [ >=, =, <=, <, > ]
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs groupId="alerts">
+  <TabItem value="dms" label="DMs" default>
+    <CodeBlock>
+      /notification create price blockchain:Terra dex:Astroport pair:bLUNA / LUNA Pair price:0.9 type:lower than
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="server" label="Server">
+    <CodeBlock title="with channel">
+      /notification create price blockchain:Terra dex:Terraswap pair:bLUNA / LUNA Pair price:0.9 type:lower than channel:#price-talk
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="without channel">
+      /notification create price blockchain:Terra dex:Terraswap pair:bLUNA / LUNA Pair price:0.9 type:lower than
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete price
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created Price notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete price id:Price Alert for ASTRO / LUNA Pair (Astroport) on Terra (DMs)
+```
+
+</TabItem>
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+<TabItem value="twitter" label="Twitter">
+    🏗️ Under development ...
+</TabItem>
+</Tabs>

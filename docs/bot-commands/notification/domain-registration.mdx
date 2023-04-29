@@ -1,0 +1,132 @@
+---
+title: Domanin Registration
+sidebar_position: 9
+description: This command allows you to create new notifications to receive alerts of NFTs, Governance, Price, and more. Simply select the notification you want to create and follow the steps to set it up.
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+## Create Notification Alert
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification create domain-registration
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**blockchain\***
+
+    type: Option
+    description: Blockchain where that domain exists.
+    choices: [ Terra Classic, Terra ]
+
+**domain**
+
+    type: String
+    description: Domain you want to be alerted about.
+
+:::info
+
+- Keep in mind that the domain must be in the format of `domain.tld` and not just the name of the domain.
+- You must provide a registered domain.
+
+:::
+
+**channel**
+
+    type: Channel
+    description: Channel to send the alerts.
+    default: Channel where the command was executed.
+
+**Example Usage**
+
+<Tabs groupId="alerts">
+  <TabItem value="dms" label="DMs" default>
+    <CodeBlock>
+      /notification create domain-registration blockchain:Terra
+      domain:alien.luna
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="server" label="Server">
+    <CodeBlock title="with channel">
+      /notification create domain-registration blockchain:Terra
+      domain:alien.luna channel:#domain-alerts
+    </CodeBlock>
+    <p>or</p>
+    <CodeBlock title="without channel">
+      /notification create domain-registration blockchain:Terra
+      domain:alien.luna
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+:::info
+After creating the notification you will be prompt to choose the type of alerts you wish to receive.
+:::
+
+:::caution
+While this types can already be configured, some of them are not live yet. It'll start working automatically once it's live.
+:::
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+  🏗️ Under development ...
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
+
+
+
+## Delete Notification Alert
+
+
+<Tabs groupId="platforms">
+<TabItem value="discord" label="Discord" default>
+
+```
+/notification delete domain-registration
+```
+
+<p>
+  <strong>Parameters:</strong>
+</p>
+
+\*_Required_
+
+**id\***
+
+    type: Option
+    description: Your previously created Domain Registration notifications.
+    choices: [ Your notifications ]
+
+**Example Usage**
+
+```
+/notification delete domain-registration id:Domain Registration for alien on Terra (Awesome Server)
+```
+
+</TabItem>
+
+<TabItem value="telegram" label="Telegram">
+
+🏗️ Under development ...
+
+</TabItem>
+
+<TabItem value="twitter" label="Twitter">
+🏗️ Under development ...
+</TabItem>
+</Tabs>
